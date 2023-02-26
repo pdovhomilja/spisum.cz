@@ -7,11 +7,11 @@ type Props = {};
 
 function Header({}: Props) {
   return (
-    <div className="flex flex-row bg-[rgb(196,156,94)] text-white  items-center justify-center mx-auto w-full">
+    <div className="flex flex-row bg-white text-black  items-center justify-center mx-auto w-full">
       <div className="pl-5">
         <Image
           className="object-cover"
-          src="/images/svd-logo2.png"
+          src="/images/spisum_logo.svg"
           alt="Logo"
           width={200}
           height={100}
