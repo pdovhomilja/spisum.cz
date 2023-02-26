@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-orange {
+    @apply flex flex-row items-center justify-center bg-[rgb(254,151,1)] text-white p-2 rounded-md;
+  }
+  .btn-blue {
+    @apply flex flex-row items-center justify-center bg-[rgb(65,83,179)] text-white p-2 rounded-md;
+  }
+}
