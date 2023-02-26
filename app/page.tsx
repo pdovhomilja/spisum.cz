@@ -1,6 +1,12 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import {
+  BanknotesIcon,
+  CheckBadgeIcon,
+  CheckCircleIcon,
+  CloudIcon,
+} from "@heroicons/react/24/solid";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +24,7 @@ export default function Home() {
             dokumenty pracují.
           </p>
           <p>
-            <Link href="/contact" className="btn-orange gap-2">
+            <Link href="/modules" className="btn-orange gap-2">
               Zjistit více
             </Link>
           </p>
@@ -86,35 +92,48 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col w-full mx-auto items-center justify-center">
-        <h2 className="text-2xl pb-2">Komplexní řešení spisové služby</h2>
+      <div className="flex flex-col w-full mx-auto items-center justify-center py-5">
+        <h2 className="text-2xl py-5">Komplexní řešení spisové služby</h2>
         <div className="flex flex-row px-5 space-x-5">
-          <div className="w-full md:w-1/2">
-            <p>
-              <li>
+          <div className="w-full md:w-1/2 ">
+            <ul>
+              <li className="flex items-center gap-2">
+                <CheckCircleIcon className="w-5 h-5 text-orange-400" />
                 Příjem dokumentu v elektronické podobě potvrzený informativní
                 zprávou v souladu s právními předpisy
               </li>
-              <li>Šifrovaná komunikace s využitím SSL certifikátu</li>
-              <li>
+              <li className="flex items-center gap-2">
+                <CheckCircleIcon className="w-5 h-5 text-orange-400" />
+                Šifrovaná komunikace s využitím SSL certifikátu
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircleIcon className="w-5 h-5 text-orange-400" />
                 Předávání dokumentů v datovém balíčku SIP do národního
                 digitálního archivu
               </li>
-              <li>
+              <li className="flex items-center gap-2">
+                <CheckCircleIcon className="w-5 h-5 text-orange-400" />
                 Možnost přidání nových funkcionalit aktualizace systému spisové
                 služby podle měnících se požadavků příslušných právních úprav
               </li>
-            </p>
+            </ul>
           </div>
           <div className="w-full md:w-1/2">
-            <p>
-              <li>Možnost konverze včetně konverzních doložek</li>
-              <li>Integrace s ISDS</li>
-              <li>
+            <ul>
+              <li className="flex items-center gap-2">
+                <CheckCircleIcon className="w-5 h-5 text-orange-400" />
+                Možnost konverze včetně konverzních doložek
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircleIcon className="w-5 h-5 text-orange-400" />
+                Integrace s ISDS
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircleIcon className="w-5 h-5 text-orange-400" />
                 Transakční protokol včetně kompletní historie kdo a kdy s daným
                 dokumentem pracoval
               </li>
-            </p>
+            </ul>
           </div>
         </div>
       </div>
@@ -129,19 +148,22 @@ export default function Home() {
           <button className="btn-blue">Poptejte SpisUm</button>
         </div>
         <div className="space-y-5 py-5 w-full md:w-1/2 px-5 m-5">
-          <div className="bg-white p-5">
+          <div className="flex items-center space-x-5 bg-white p-5">
+            <CloudIcon className="w-5 h-5" />
             <p>
               Uživatelsky jednoduchá online aplikace dostupná on-premise nebo na
               cloudu.
             </p>
           </div>
-          <div className="bg-white p-5">
+          <div className="flex items-center space-x-5 bg-white p-5">
+            <CheckBadgeIcon className="w-5 h-5" />
             <p>
               Systém v souladu s legislativou České republiky a vyhlášky č.
               259/2012 Sb. a NSESS
             </p>
           </div>
-          <div className="bg-white p-5">
+          <div className="flex items-center space-x-5 bg-white p-5">
+            <BanknotesIcon className="w-5 h-5" />
             <p>
               Cenově dostupné a škálovatelné řešení postavené na open-source
               platformě
@@ -149,185 +171,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <section className="flex flex-col justify-center items-center w-full">
-        <div>
-          <div className="flex items-center justify-center py-5">
-            <h2 className="text-2xl ">Komplexní řešení spisové služby</h2>
-          </div>
-          <div className="flex flex-col md:flex-row text-white space-x-5">
-            <div className="bg-blue-500 p-10">Podatelna</div>
-            <div className="bg-blue-500 p-10">Evidence</div>
-            <div className="bg-blue-500 p-10">Výpravna</div>
-            <div className="bg-blue-500 p-10">Spisovna</div>
-          </div>
-        </div>
-        <div className="flex flex-col mx:flex-row   items-center justify-center py-5">
-          <h2 className="text-2xl">Klíčové funkce</h2>
-          <div className="flex flex-col md:flex-row pt-5">
-            <div className="w-full md:w-1/2">
-              <div>
-                <h3 className="text-xl font-bold">
-                  Funkce modulů Podatelna a Výpravna
-                </h3>
-                <li>
-                  <ul>
-                    Příjem dokumentů (e-mailem, datovou schránkou, poštou)
-                  </ul>
-                  <ul>Validace a třídění příchozích dokumentů</ul>
-                  <ul>Zaevidování dokumentu</ul>
-                  <ul>Postoupení dokumentu k vyřízení</ul>
-                  <ul>
-                    Odeslání dokumentu (e-mailem, datovou schránkou, poštou,
-                    převzetím, zveřejněním) a správa zásilek
-                  </ul>
-                  <ul>Stahování doručenek k odeslaným datovým zprávám</ul>
-                  <ul>
-                    Kontrola škodlivého kódu u přijatých dokumentů i dokumentů k
-                    odeslání
-                  </ul>
-                </li>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">Funkce modulu Spisovna</h3>
-                <li>
-                  <ul>Uchování vyřízených dokumentů po dobu skartační lhůty</ul>
-                  <ul>Zapůjčení digitálních dokumentů ze Spisovny</ul>
-                </li>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">
-                  Funkce modulu Jmenný rejstřík
-                </h3>
-                <li>
-                  <ul>Založení a editace nového subjektu</ul>
-                  <ul>Vytváření vazeb mezi subjekty a dokumenty</ul>
-                </li>
-              </div>
-            </div>
-            <div className="w-full md:w-1/2">
-              <div>
-                <div>
-                  <h3 className="text-xl font-bold">
-                    Funkce modulů Evidence a Podpisová kniha
-                  </h3>
-                  <ul>
-                    <li>
-                      Provedení konverze dokumentů a převod doumentů do
-                      výstupního formátu podle platné legislativy
-                    </li>
-                    <li>Vytváření poznámek v dokumentu nebo spisu</li>
-                    <li>
-                      Předání dokumentu jinému uživateli (např. k podepsání nebo
-                      opečetění) nebo spisovému uzlu{" "}
-                    </li>
-                    <li>
-                      Opatření dokumentu kvalifikovaným elektronickým
-                      podpisem/kvalifikovanou elektronickou pečetí
-                    </li>
-                    <li>Vytváření konceptu a povýšení konceptu na dokument</li>
-                    <li>
-                      Kontrola úplnosti dokumentu, vyřízení dokumentu a jeho
-                      zařazení do spisu
-                    </li>
-                    <li>
-                      Kontrola úplnosti spisu, uzavření spisu a jeho přenos do
-                      Spisovny
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">Funkce modulu Skartace</h3>
-                  <ul>
-                    <li>Podpora procesu skartačního řízení</li>
-                    <li>
-                      Předávání dokumentů v datovém balíčku SIP do Národního
-                      digitálního archivu
-                    </li>
-                    <li>
-                      Sestavení a odeslání skartačního návrhu včetně průvodního
-                      dopisu
-                    </li>
-                    <li>
-                      Import rozhodnutí a přejímky z Národního digitálního
-                      archivu
-                    </li>
-                    <li>Smazání komponent zničených dokumentů</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">
-                    Funkce modulu Administrace
-                  </h3>
-                  <ul>
-                    <li>
-                      Zobrazení, procházení a export transakčního protokolu
-                    </li>
-                    <li>Evidence konverzí</li>
-                    <li>Uložení denního otisku</li>
-                    <li>Správa uživatelů a rolí</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="flex items-center justify-center">
-        <div className="flex flex-col md:flex-row w-full  ">
-          <div className="flex flex-col items-center justify-center w-full md:w-1/2 space-y-5">
-            <h2 className="text-2xl text-orange-400">Produkt nové generace</h2>
-            <p>
-              Elektronická spisová služba SpisUm je intuitivním nástrojem, který
-              v maximální míře zaručuje transparentní a přehlednou správu
-              dokumentů, a to v souladu s právními předpisy.
-            </p>
-            <button className="btn-orange">Poptej SpisUm</button>
-          </div>
-          <div>
-            <Image
-              src="/images/02-spisum.jpg"
-              width={1000}
-              height={500}
-              alt="image2"
-            />
-          </div>
-        </div>
-      </section>
-      <section className="w-full">
-        <div className="flex flex-col items-start justify-center w-full mx-auto bg-indigo-700 text-white">
-          <div className="flex flex-col items-center justify-center space-x-5 w-full">
-            <h2 className="text-2xl">Máte naši podporu</h2>
-            <p>
-              Prodejem produktu naše spolupráce nekončí, naopak začíná. Nejste
-              si jisti, zda SpisUm řešení je pro vás vhodné? Neváhejte se na nás
-              obrátit. Poradíme Vám a individuálně proškolíme Vaše zaměstnance.
-            </p>
-          </div>
-          <div className="flex flex-row justify-center space-x-5 w-full py-5">
-            <div className="bg-white p-10 text-orange-600">
-              <h3>Helpdesk</h3>
-            </div>
-            <div className="bg-white p-10 text-orange-600">
-              <h3>Školení</h3>
-            </div>
-
-            <div className="bg-white p-10 text-orange-600">
-              <h3>Nadstavba</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="bg-orange-400 w-full text-white">
-        <div>
-          <h2>Jsme Vaším partnerem</h2>
-          <p>
-            Pokud Vás naše řešení zaujalo, neváhejte nás kontaktovat, rádi Vám
-            SpisUm předvedeme. ISFG Technology a.s. Švábova 772/18, Praha 5
-            e-mail: info@isfgroup.cz IČ: 10975047
-          </p>
-        </div>
-      </section>
-      <section>Google Maps</section>
     </main>
   );
 }

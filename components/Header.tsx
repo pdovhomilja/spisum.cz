@@ -25,11 +25,11 @@ function Header({}: Props) {
           <Link href="/" className="">
             Spisum
           </Link>
-          <Link href="/gallery">Moduly</Link>
-          <Link href="/contact">Podpora</Link>
+          <Link href="/modules">Moduly</Link>
+          <Link href="/support">Podpora</Link>
           <Link href="/contact">Kontakt</Link>
-          <Link href="/contact">Stát se partnerem</Link>
-          <Link href="/contact" className="btn-orange gap-2">
+          <Link href="/partner">Stát se partnerem</Link>
+          <Link href="/lead" className="btn-orange gap-2">
             <PaperAirplaneIcon className="h-5 w-5" />
             Poslat poptávku
           </Link>
