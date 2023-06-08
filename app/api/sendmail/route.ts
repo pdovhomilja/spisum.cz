@@ -93,16 +93,22 @@ export async function POST(request: NextRequest) {
       phone: res.phone,
     };
 
-    const newLead = await fetch(endpoint, {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(responseData),
-    });
+    try {
+      const newLead = await fetch(endpoint, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(responseData),
+      });
 
-    return NextResponse.json(
-      { success: true, newLead: newLead },
-      { status: 200 }
-    );
+      console.log(newLead, "newLead");
+      return NextResponse.json(
+        { success: true, newLead: newLead },
+        { status: 200 }
+      );
+    } catch (error: any) {
+      console.log(error);
+      return NextResponse.json({ error: error.message });
+    }
   } catch (error: any) {
     return NextResponse.json({ error: error.message });
   }
