@@ -76,11 +76,11 @@ export async function POST(request: NextRequest) {
     });
 
     //Create a new record in CRM api endpoint
-    const endpoint = "your_endpoint_url_here";
-    const token = "your_token_here";
+    const endpoint = `${process.env.NEXTCRM_ENDPOINT}/api/crm/leads/createLeadFromWeb`;
+    const token = process.env.NEXTCRM_TOKEN;
 
     const headers = {
-      Authorization: `Bearer ${token}`,
+      Authorization: `${token}`,
       "Content-Type": "application/json",
     };
 
