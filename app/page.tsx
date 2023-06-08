@@ -10,8 +10,8 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-start justify-center  ">
-      <div className="flex flex-col items-start justify-center md:flex-row p-20">
+    <main className="w-full mx-auto overflow-auto h-full">
+      <div className="flex flex-col items-start justify-center md:flex-row py-20 px-40">
         <div className=" w-full  md:w-1/2 space-y-5">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
             Elektronická spisová služba SpisUm
@@ -147,7 +147,10 @@ export default function Home() {
             maximální míře zaručí transparentní a přehledné spravování dokumentů
             v souladu s právními předpisy.
           </p>
-          <Button asChild className="bg-[#4154B3] hover:bg-[#FE9601]">
+          <Button
+            asChild
+            className="bg-[#4154B3] hover:bg-[#FE9601] my-10 hover:outline"
+          >
             <Link href="/modules" className="space-x-2 uppercase">
               Zjistit více
             </Link>

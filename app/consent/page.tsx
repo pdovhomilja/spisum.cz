@@ -4,7 +4,7 @@ type Props = {};
 
 const ConsentPage = (props: Props) => {
   return (
-    <div className="w-2/3 mx-auto">
+    <div className="w-2/3 mx-auto  h-full overflow-auto">
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl py-20">
         Informace o zpracování osobních údajů zákazníků
       </h1>

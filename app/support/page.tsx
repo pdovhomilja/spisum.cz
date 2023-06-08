@@ -9,7 +9,7 @@ type Props = {};
 
 const Support = (props: Props) => {
   return (
-    <section className="w-full h-full">
+    <section className="w-full mx-auto overflow-auto h-full">
       <div className="flex flex-col items-start justify-center w-full mx-auto bg-indigo-700 text-white h-full lg:p-80">
         <div className="flex flex-col items-center justify-center space-x-5 w-full py-5">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl py-20">

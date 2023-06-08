@@ -9,8 +9,8 @@ type Props = {};
 
 const Modules = (props: Props) => {
   return (
-    <>
-      <section className="flex flex-col justify-center items-center w-full p-20 lg:px-80">
+    <div className="overflow-auto h-full">
+      <section className="flex flex-col justify-center items-center w-full p-20 lg:px-80 overflow-auto">
         <div className="flex flex-col items-center justify-center ">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl py-20">
             Komplexní řešení spisové služby
@@ -295,7 +295,7 @@ const Modules = (props: Props) => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

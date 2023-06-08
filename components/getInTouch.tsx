@@ -59,8 +59,10 @@ export default function GetInTouch() {
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Pokud Vás naše řešení zaujalo, neváhejte nás kontaktovat, rádi Vám
-              SpisUm předvedeme. ISFG Technology a.s.
-              <br /> IČ: 10975047
+              SpisUm předvedeme. <br /> <br />
+              <span className="font-bold"> ISFG Technology a.s.</span>
+              <br />
+              IČ: 10975047
             </p>
             <dl className="mt-10 space-y-4 text-base leading-7 text-gray-600">
               <div className="flex gap-x-4">

@@ -1,10 +1,11 @@
+import PartnerForm from "@/components/PartnerForm";
 import React from "react";
 
 type Props = {};
 
 const Partner = (props: Props) => {
   return (
-    <div className="w-2/3 mx-auto">
+    <div className="w-2/3 mx-auto overflow-auto h-full ">
       <section>
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl py-20">
           Naši partneři
@@ -22,12 +23,12 @@ const Partner = (props: Props) => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="overflow-auto">
         <h2 className="text-orange-400 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
           Staň se partnerem
         </h2>
         <p>Text proč být partnerem</p>
-        <div>Partner form</div>
+        <PartnerForm />
       </section>
     </div>
   );

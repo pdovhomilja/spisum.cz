@@ -35,7 +35,7 @@ function Header({}: Props) {
           </div>
           <div className="flex gap-4">
             <Button asChild className="bg-[#4154B3]">
-              <Link href="#" className="space-x-2">
+              <Link href="/contact" className="space-x-2">
                 <PaperAirplaneIcon className="h-5 w-5" />
                 <p> Poslat poptávku</p>
               </Link>
