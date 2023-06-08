@@ -92,7 +92,7 @@ export default function GetInTouch() {
                     className="hover:text-gray-900"
                     href="tel:+1 (555) 234-5678"
                   >
-                    +420 (704) 790 790
+                    +420 (774) 960 960
                   </a>
                 </dd>
               </div>
