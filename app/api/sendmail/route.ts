@@ -93,6 +93,9 @@ export async function POST(request: NextRequest) {
       phone: res.phone,
     };
 
+    console.log(endpoint, "endpoint");
+    console.log(token, "token");
+
     try {
       const newLead = await fetch(endpoint, {
         method: "POST",
@@ -106,8 +109,8 @@ export async function POST(request: NextRequest) {
         { status: 200 }
       );
     } catch (error: any) {
-      console.log(error);
-      return NextResponse.json({ error: error.message });
+      console.log(error, "error");
+      return NextResponse.json({ error: error.message }, { status: 500 });
     }
   } catch (error: any) {
     return NextResponse.json({ error: error.message });
