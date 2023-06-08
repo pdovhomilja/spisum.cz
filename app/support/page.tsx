@@ -9,10 +9,12 @@ type Props = {};
 
 const Support = (props: Props) => {
   return (
-    <section className="w-full">
-      <div className="flex flex-col items-start justify-center w-full mx-auto bg-indigo-700 text-white">
+    <section className="w-full h-full">
+      <div className="flex flex-col items-start justify-center w-full mx-auto bg-indigo-700 text-white h-full lg:p-80">
         <div className="flex flex-col items-center justify-center space-x-5 w-full py-5">
-          <h2 className="text-2xl">Máte naši podporu</h2>
+          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl py-20">
+            Máte naši podporu
+          </h1>
           <p className="p-5">
             Prodejem produktu naše spolupráce nekončí, naopak začíná. Nejste si
             jisti, zda SpisUm řešení je pro vás vhodné? Neváhejte se na nás

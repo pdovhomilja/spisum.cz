@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import Link from "next/link";
 import {
   BanknotesIcon,
@@ -7,15 +6,14 @@ import {
   CheckCircleIcon,
   CloudIcon,
 } from "@heroicons/react/24/solid";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-start justify-center  ">
-      <div className="flex flex-col items-start justify-center md:flex-row p-5">
+      <div className="flex flex-col items-start justify-center md:flex-row p-20">
         <div className=" w-full  md:w-1/2 space-y-5">
-          <h1 className="text-3xl font-bold">
+          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
             Elektronická spisová služba SpisUm
           </h1>
           <p>
@@ -23,11 +21,11 @@ export default function Home() {
             efektivně. Šetřete svůj čas, ale především čas referentů, kteří s
             dokumenty pracují.
           </p>
-          <p>
-            <Link href="/modules" className="btn-orange gap-2">
+          <Button asChild className="bg-[#FE9601] hover:bg-[#4154B3]">
+            <Link href="/modules" className="space-x-2 uppercase">
               Zjistit více
             </Link>
-          </p>
+          </Button>
         </div>
         <div className="flex items-center justify-center w-1/2">
           <Image
@@ -39,7 +37,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex flex-col w-full md:flex-row bg-gray-200 py-5 ">
+      <div className="flex flex-col w-full md:flex-row bg-gray-200 p-20">
         <div className="w-full md:w-1/2 flex items-start justify-center">
           <Image
             src="/images/01-spisum.png"
@@ -49,19 +47,19 @@ export default function Home() {
           />
         </div>
         <div className="w-full md:w-1/2 space-y-5">
-          <h2 className="text-2xl text-orange-400">
+          <h2 className="text-orange-400 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
             1. Moderní řešení spisové služby
           </h2>
-          <p>
+          <p className="leading-7 [&:not(:first-child)]:mt-6  text-justify">
             SpisUm je moderní řešení s jednoduchým a intuitivním uživatelským
             rozhraním reflektující nároky a požadavky každého uživatele spisové
             služy. Se SpisUm můžete evidovat jakýkoliv digitální obsah
             jednoduše, přehledně a efektivně.
           </p>
-          <h2 className="text-2xl text-orange-400">
+          <h2 className="text-orange-400 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
             2. Buďte v souladu s legislativou České republiky
           </h2>
-          <p>
+          <p className="leading-7 [&:not(:first-child)]:mt-6  text-justify">
             SpisUm splňuje náležitosti legislativy České republiky na výkon
             spisové služby. Obsahuje kontrolní mechanismy, jasný proces
             finalizace dokumentu a jeho odeslání. Zároveň vychází z potřeb
@@ -69,10 +67,10 @@ export default function Home() {
             Splňuje požadavky NSESS, které umožňují provádění skartačního
             řízení.
           </p>
-          <h2 className="text-2xl text-orange-400">
+          <h2 className="text-orange-400 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
             3. Obíhat nechte dokumenty, nikoliv zaměstnance
           </h2>
-          <p>
+          <p className="leading-7 [&:not(:first-child)]:mt-6  text-justify">
             Nepodceňujte systém spisové služby, SpisUm spravuje ve Vaší
             organizaci celý životní cyklus dokumentů, a to díky správě jejich
             metadat. Zabraňte opakujícím se chybám při odesílání dokumentů,
@@ -80,8 +78,10 @@ export default function Home() {
             skartačního řízení. Předcházejte chybám a nedostatkům díky
             jednoduchým procesům a notifikacím.
           </p>
-          <h2 className="text-2xl text-orange-400"> 4. Partnerský přístup </h2>
-          <p>
+          <h2 className="text-orange-400 scroll-m-20 border-b  pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+            4. Partnerský přístup
+          </h2>
+          <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify">
             Jsme Vaším partnerem. Věnujeme náležitou pozornost všem zákazníkům i
             procesům samotné spisové služby. Odpovědně se stavíme za
             profesionální stav spisové služby a její funkčnost. Společně
@@ -92,7 +92,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col w-full mx-auto items-center justify-center py-5">
+      <div className="flex flex-col w-full mx-auto items-center justify-center p-20">
         <h2 className="text-2xl py-5">Komplexní řešení spisové služby</h2>
         <div className="flex flex-row px-5 space-x-5">
           <div className="w-full md:w-1/2 ">
@@ -137,20 +137,26 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row w-full bg-orange-400">
+      <div className="flex flex-col md:flex-row w-full bg-orange-400 p-20">
         <div className="flex flex-col items-center justify-center p-5 text-white">
-          <h1 className="text-2xl">Produkt nové generace</h1>
-          <p>
+          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+            Produkt nové generace
+          </h1>
+          <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify">
             Elektronická spisová služba SpisUm je intuitivním nástrojem, který v
             maximální míře zaručí transparentní a přehledné spravování dokumentů
             v souladu s právními předpisy.
           </p>
-          <button className="btn-blue">Poptejte SpisUm</button>
+          <Button asChild className="bg-[#4154B3] hover:bg-[#FE9601]">
+            <Link href="/modules" className="space-x-2 uppercase">
+              Zjistit více
+            </Link>
+          </Button>
         </div>
         <div className="space-y-5 py-5 w-full md:w-1/2 px-5 m-5">
           <div className="flex items-center space-x-5 bg-white p-5">
             <CloudIcon className="w-5 h-5" />
-            <p>
+            <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify">
               Uživatelsky jednoduchá online aplikace dostupná on-premise nebo na
               cloudu.
             </p>
