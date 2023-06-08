@@ -3,7 +3,7 @@ import React, { useCallback, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { z, ZodType } from "zod";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import {
@@ -18,6 +18,7 @@ import {
 import {
   ComputerDesktopIcon,
   PaperAirplaneIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
 
@@ -76,7 +77,14 @@ const OrderButton = ({ title }: Props) => {
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="bg-white w-1/2 h-2/3 rounded-md overflow-hidden">
-              <div className="flex flex-col items-center justify-center p-20 h-full ">
+              <div
+                className="px-5 pr-9 justify-center  py-3 border w-3 rounded-br-md cursor-pointer hover:bg-slate-900 hover:text-white"
+                onClick={() => setOpen(false)}
+              >
+                <XMarkIcon className="w-5 h-5" />
+              </div>
+
+              <div className="flex flex-col items-center justify-center p-10 h-full ">
                 {sending && (
                   <div className="flex flex-col items-center justify-center">
                     <p className="text-3xl font-extrabold tracking-tight lg:text-5xl">
@@ -92,36 +100,43 @@ const OrderButton = ({ title }: Props) => {
                     <Form {...form}>
                       <form
                         onSubmit={form.handleSubmit(onValid)}
-                        className=" w-full pt-16 overflow-auto h-full"
+                        className=" w-full pt-10 overflow-auto h-full"
                       >
-                        <FormField
-                          control={form.control}
-                          name="firstName"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Jméno</FormLabel>
-                              <FormControl>
-                                <Input {...field} />
-                              </FormControl>
+                        <div className="flex flex-row w-full space-x-2">
+                          <div className="w-1/2">
+                            <FormField
+                              control={form.control}
+                              name="firstName"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>Jméno</FormLabel>
+                                  <FormControl>
+                                    <Input {...field} />
+                                  </FormControl>
 
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="lastName"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Přijmení</FormLabel>
-                              <FormControl>
-                                <Input {...field} />
-                              </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+                          <div className="w-1/2">
+                            <FormField
+                              control={form.control}
+                              name="lastName"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>Přijmení</FormLabel>
+                                  <FormControl>
+                                    <Input {...field} />
+                                  </FormControl>
 
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+                        </div>
+
                         <FormField
                           control={form.control}
                           name="account"
@@ -150,34 +165,41 @@ const OrderButton = ({ title }: Props) => {
                             </FormItem>
                           )}
                         />
-                        <FormField
-                          control={form.control}
-                          name="email"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>E-mail</FormLabel>
-                              <FormControl>
-                                <Input {...field} />
-                              </FormControl>
+                        <div className="flex flex-row w-full space-x-2">
+                          <div className="w-1/2">
+                            <FormField
+                              control={form.control}
+                              name="email"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>E-mail</FormLabel>
+                                  <FormControl>
+                                    <Input {...field} />
+                                  </FormControl>
 
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="phone"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Telefon</FormLabel>
-                              <FormControl>
-                                <Input {...field} />
-                              </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+                          <div className="w-1/2">
+                            <FormField
+                              control={form.control}
+                              name="phone"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>Telefon</FormLabel>
+                                  <FormControl>
+                                    <Input {...field} />
+                                  </FormControl>
 
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          </div>
+                        </div>
+
                         <div className="flex space-x-5 pt-5">
                           <Button type="submit" className="bg-[#FE9601]">
                             Odeslat

@@ -1,11 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { SocialIcon } from "react-social-icons";
-import {
-  ComputerDesktopIcon,
-  PaperAirplaneIcon,
-} from "@heroicons/react/24/solid";
+import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { Button } from "@/components/ui/button";
 import OrderButton from "./OrderButton";
 
@@ -31,7 +27,7 @@ function Header({}: Props) {
             <Link href="/modules">Moduly</Link>
             <Link href="/support">Podpora</Link>
             <Link href="/contact">Kontakt</Link>
-            <Link href="/partner">Stát se partnerem</Link>
+            {/*        <Link href="/partner">Stát se partnerem</Link> */}
           </div>
           <div className="flex gap-4">
             <Button asChild className="bg-[#4154B3]">
