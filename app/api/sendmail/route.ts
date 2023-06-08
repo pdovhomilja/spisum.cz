@@ -93,13 +93,16 @@ export async function POST(request: NextRequest) {
       phone: res.phone,
     };
 
-    await fetch(endpoint, {
+    const newLead = await fetch(endpoint, {
       method: "POST",
       headers: headers,
       body: JSON.stringify(responseData),
     });
 
-    return NextResponse.json({ success: true }, { status: 200 });
+    return NextResponse.json(
+      { success: true, newLead: newLead },
+      { status: 200 }
+    );
   } catch (error: any) {
     return NextResponse.json({ error: error.message });
   }
