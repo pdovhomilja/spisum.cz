@@ -12,7 +12,7 @@ import Carousel from "@/components/Carousel";
 export default function Home() {
   return (
     <main className="w-full mx-auto overflow-auto h-full">
-      <div className="flex flex-col items-start justify-center md:flex-row py-20 px-40">
+      <div className="flex flex-col items-start justify-center md:flex-row p-5 md:p-20 lg:p-80">
         <div className=" w-full  md:w-1/2 space-y-5">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
             Elektronická spisová služba SpisUm
@@ -39,7 +39,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col w-full md:flex-row bg-gray-200">
-        <div className="w-full md:w-1/2 space-y-5 p-20 text-sm">
+        <div className="w-full md:w-1/2 space-y-5 p-5 md:p-20 text-sm">
           <h2 className="text-orange-400 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
             1. Moderní řešení spisové služby
           </h2>
@@ -94,7 +94,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex flex-col w-full mx-auto items-center justify-center p-20">
+      <div className="flex flex-col w-full mx-auto items-center justify-center p-5 md:p-20">
         <h2 className="text-2xl py-5">Komplexní řešení spisové služby</h2>
         <div className="flex flex-col md:flex-row px-5 space-x-5">
           <div className="w-full md:w-1/2 ">
@@ -139,7 +139,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row w-full bg-orange-400 p-20">
+      <div className="flex flex-col lg:flex-row w-full bg-orange-400 p-5 md:p-20">
         <div className="flex flex-col items-center justify-center p-5 text-white">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
             Produkt nové generace
