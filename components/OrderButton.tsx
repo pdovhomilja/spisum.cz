@@ -76,7 +76,7 @@ const OrderButton = ({ title }: Props) => {
       {open && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50">
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-white w-1/2 h-2/3 rounded-md overflow-hidden">
+            <div className="bg-white w-11/12 lg:w-1/2 h-2/3 md:h-1/2 rounded-md overflow-hidden">
               <div
                 className="px-5 pr-9 justify-center  py-3 border w-3 rounded-br-md cursor-pointer hover:bg-slate-900 hover:text-white"
                 onClick={() => setOpen(false)}
@@ -206,7 +206,7 @@ const OrderButton = ({ title }: Props) => {
                           </Button>
                           <Button onClick={() => setOpen(false)}>Zavřít</Button>
                         </div>
-                        <div className="w-full pt-10 px-20">
+                        <div className="w-full pt-10 lg:px-20">
                           <p className="w-full text-xs ">
                             * Odesláním tohoto formuláře souhlasíte se
                             zpracováním osobních údajů. Více o ochraně osobních

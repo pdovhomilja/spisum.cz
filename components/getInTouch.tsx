@@ -13,7 +13,6 @@ import { useRouter } from "next/navigation";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -22,7 +21,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Link } from "lucide-react";
+import Link from "next/link";
 
 type FormData = {
   firstName: string;
@@ -173,120 +172,120 @@ export default function GetInTouch() {
             </div>
           </div>
         )}
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onValid)}
-            className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
-          >
-            <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-              <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-                <div className="text-slate-900 font-semibold text-sm leading-6">
-                  <FormField
-                    control={form.control}
-                    name="firstName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Jméno</FormLabel>
-                        <FormControl>
-                          <Input {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="text-slate-900 font-semibold text-sm leading-6">
-                  <FormField
-                    control={form.control}
-                    name="lastName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Přijmení</FormLabel>
-                        <FormControl>
-                          <Input {...field} />
-                        </FormControl>
+        <div>
+          {" "}
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onValid)}
+              className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
+            >
+              <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+                <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                  <div className="text-slate-900 font-semibold text-sm leading-6">
+                    <FormField
+                      control={form.control}
+                      name="firstName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Jméno</FormLabel>
+                          <FormControl>
+                            <Input {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <div className="text-slate-900 font-semibold text-sm leading-6">
+                    <FormField
+                      control={form.control}
+                      name="lastName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Přijmení</FormLabel>
+                          <FormControl>
+                            <Input {...field} />
+                          </FormControl>
 
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="sm:col-span-2 text-slate-900 font-semibold text-sm leading-6">
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>E-mail</FormLabel>
-                        <FormControl>
-                          <Input {...field} />
-                        </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <div className="sm:col-span-2 text-slate-900 font-semibold text-sm leading-6">
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>E-mail</FormLabel>
+                          <FormControl>
+                            <Input {...field} />
+                          </FormControl>
 
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="sm:col-span-2 text-slate-900 font-semibold text-sm leading-6">
-                  {" "}
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Telefon</FormLabel>
-                        <FormControl>
-                          <Input {...field} />
-                        </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <div className="sm:col-span-2 text-slate-900 font-semibold text-sm leading-6">
+                    {" "}
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Telefon</FormLabel>
+                          <FormControl>
+                            <Input {...field} />
+                          </FormControl>
 
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="sm:col-span-2 text-slate-900 font-semibold text-sm leading-6">
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Vaše zpráva</FormLabel>
-                        <FormControl>
-                          <Textarea {...field} />
-                        </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <div className="sm:col-span-2 text-slate-900 font-semibold text-sm leading-6">
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Vaše zpráva</FormLabel>
+                          <FormControl>
+                            <Textarea {...field} />
+                          </FormControl>
 
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                </div>
+                <div className="mt-8 flex justify-end">
+                  <button
+                    type="submit"
+                    className="rounded-md bg-[#4154B3] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    Odeslat
+                  </button>
                 </div>
               </div>
-              <div className="mt-8 flex justify-end">
-                <button
-                  type="submit"
-                  className="rounded-md bg-[#4154B3] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Odeslat
-                </button>
-              </div>
-            </div>
-            <div className="w-full pt-10 px-20">
-              <p className="w-full text-xs text-slate-900">
-                * Odesláním tohoto formuláře souhlasíte se zpracováním osobních
-                údajů. Více o ochraně osobních údajů a Vašich právech naleznete
-                (
-                <Link
-                  href="/consent"
-                  target="_blank"
-                  className="underline hover:text-blue-500 cursor-pointer"
-                >
-                  ZDE
-                </Link>
-                ) .
-              </p>
-            </div>
-          </form>
-        </Form>
+            </form>
+          </Form>
+          <div className="text-black p-10 text-xs opacity-80">
+            * Odesláním tohoto formuláře souhlasíte se zpracováním osobních
+            údajů. Více o ochraně osobních údajů a Vašich právech naleznete (
+            <Link
+              href="/consent"
+              target={"_blank"}
+              className="underline hover:text-blue-500 cursor-pointer"
+            >
+              zde
+            </Link>
+            ) .
+          </div>
+        </div>
       </div>
     </div>
   );

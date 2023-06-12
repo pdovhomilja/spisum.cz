@@ -5,7 +5,7 @@ type Props = {};
 
 function Footer({}: Props) {
   return (
-    <div className="flex flex-row h-14 py-5 px-5 items-end justify-end w-full text-xs ">
+    <div className="flex flex-row h-14 p-5 items-end justify-end w-full text-xs ">
       <div className="pr-5">
         <Link href="/">
           <h1 className="text-gray-600"></h1>

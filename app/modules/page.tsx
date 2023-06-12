@@ -1,22 +1,32 @@
+"use client";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import OrderButton from "@/components/OrderButton";
+import Carousel from "@/components/Carousel";
+import Link from "next/link";
 
-type Props = {};
+const Modules = () => {
+  const slides = [
+    "/images/carusel/Screen-detail-historie.png",
+    "/images/carusel/Screen-podatelna.png",
+    "/images/carusel/Screen-podatelna-prijem-analog.png",
+    "/images/carusel/Screen-spisovy_rad.png",
+    "/images/carusel/Screen-vlozit-do-spisu.png",
+  ];
 
-const Modules = (props: Props) => {
+  const showAlert = () => {
+    alert("Vývoj je v plném proudu");
+  };
   return (
     <div className="overflow-auto h-full">
-      <section className="flex flex-col justify-center items-center w-full p-20 lg:px-80 overflow-auto">
+      <section className="flex flex-col justify-center items-center w-full p-20 lg:px-80">
         <div className="flex flex-col items-center justify-center ">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl py-20">
             Komplexní řešení spisové služby
           </h1>
 
-          <div className="flex flex-col md:flex-row text-white space-x-5">
+          <div className="flex flex-col lg:flex-row text-white gap-5">
             <Card className="bg-blue-500 text-white">
               <CardHeader>
                 <CardTitle>Podatelna</CardTitle>
@@ -71,6 +81,13 @@ const Modules = (props: Props) => {
             </Card>
           </div>
         </div>
+      </section>
+      <section className="flex flex-col justify-center items-center w-full p-20 lg:px-80">
+        <Carousel autoSlide={false}>
+          {slides.map((slide, index) => (
+            <img src={slide} key={index} alt={"demo"} onClick={showAlert} />
+          ))}
+        </Carousel>
       </section>
       <section className="flex flex-col justify-center items-center w-full p-20 lg:px-80">
         <h2 className="text-orange-400 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
@@ -154,7 +171,7 @@ const Modules = (props: Props) => {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/2 px-10">
+          <div className="w-full md:w-1/2">
             <div className="py-5">
               <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight py-5">
                 Funkce modulů Evidence a Podpisová kniha
