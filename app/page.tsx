@@ -86,7 +86,7 @@ export default function Home() {
         </div>
         <div className="w-full md:w-1/2 flex items-center md:justify-end px-2 md:pr-20">
           <Image
-            src="/images/spisum.gif"
+            src="/images/Spisum.gif"
             alt="Image"
             width={800}
             height={600}
