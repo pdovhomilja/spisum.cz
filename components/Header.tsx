@@ -4,6 +4,7 @@ import React from "react";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { Button } from "@/components/ui/button";
 import OrderButton from "./OrderButton";
+import EnquiryButton from "./EnquiryButton";
 
 type Props = {};
 
@@ -45,12 +46,7 @@ function Header({}: Props) {
             {/*        <Link href="/partner">Stát se partnerem</Link> */}
           </div>
           <div className="flex gap-4">
-            <Button asChild className="bg-[#4154B3]">
-              <Link href="/contact" className="space-x-2">
-                <PaperAirplaneIcon className="h-5 w-5" />
-                <p> Poslat poptávku</p>
-              </Link>
-            </Button>
+            <EnquiryButton />
             <OrderButton title="Vyzkoušet Demo" />
           </div>
         </div>
