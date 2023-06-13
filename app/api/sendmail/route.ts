@@ -43,21 +43,27 @@ export async function POST(request: NextRequest) {
         "Jméno:" +
         res.firstName +
         " " +
+        "\n\n" +
         "Příjmení:" +
         res.lastName +
         " " +
+        "\n\n" +
         "Společnost:" +
         res.account +
         " " +
+        "\n\n" +
         "Pozice:" +
         res.job +
         " " +
+        "\n\n" +
         "Email:" +
         res.email +
         " " +
+        "\n\n" +
         "Telefon:" +
         res.phone +
         " " +
+        "\n\n" +
         "Zpráva:" +
         "Chce demo",
       // html: `<div>${res.message}</div><p>Sent from: ${res.email}</p><br />`,
