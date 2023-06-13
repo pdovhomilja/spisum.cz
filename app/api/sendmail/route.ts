@@ -6,8 +6,6 @@ export async function POST(request: NextRequest) {
     //GET DATA FROM REQUEST BODY
     const res = await request.json();
 
-    console.log(res, "res");
-
     let nodemailer = require("nodemailer");
 
     const transporter = nodemailer.createTransport({
@@ -97,10 +95,11 @@ export async function POST(request: NextRequest) {
       job: res.job,
       email: res.email,
       phone: res.phone,
+      lead_source: "web",
     };
 
-    console.log(endpoint, "endpoint");
-    console.log(token, "token");
+    /*     console.log(endpoint, "endpoint");
+    console.log(token, "token"); */
 
     try {
       const newLead = await fetch(endpoint, {
