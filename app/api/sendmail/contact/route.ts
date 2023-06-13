@@ -6,8 +6,6 @@ export async function POST(request: NextRequest) {
     //GET DATA FROM REQUEST BODY
     const res = await request.json();
 
-    console.log(res, "res");
-
     let nodemailer = require("nodemailer");
 
     const transporter = nodemailer.createTransport({
@@ -34,11 +32,11 @@ export async function POST(request: NextRequest) {
     });
 
     const mailData = {
-      from: res.email,
-      to: "pavel@dovhomilja.cz",
-      subject: `Message From ${res.firstName + " " + res.lastName}   - ${
-        res.phone
-      }`,
+      from: process.env.EMAIL_FROM,
+      to: process.env.EMAIL_TO,
+      subject: `Message From www.spisum.cz ${
+        res.firstName + " " + res.lastName
+      }   - ${res.phone}`,
       text:
         "Jméno: " +
         res.firstName +
@@ -73,43 +71,6 @@ export async function POST(request: NextRequest) {
       });
     });
 
-    /*  //Create a new record in CRM api endpoint
-    const endpoint = `${process.env.NEXTCRM_ENDPOINT}/api/crm/leads/createLeadFromWeb`;
-    const token = process.env.NEXTCRM_TOKEN;
-
-    const headers = {
-      Authorization: `${token}`,
-      "Content-Type": "application/json",
-    };
-
-    const responseData = {
-      firstName: res.firstName,
-      lastName: res.lastName,
-      account: res.account,
-      job: res.job,
-      email: res.email,
-      phone: res.phone,
-    };
-
-    console.log(endpoint, "endpoint");
-    console.log(token, "token");
-
-    try {
-      const newLead = await fetch(endpoint, {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(responseData),
-      });
-
-      console.log(newLead, "newLead");
-      return NextResponse.json(
-        { success: true, newLead: newLead },
-        { status: 200 }
-      );
-    } catch (error: any) {
-      console.log(error, "error");
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    } */
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error: any) {
     return NextResponse.json({ error: error.message });

@@ -34,11 +34,11 @@ export async function POST(request: NextRequest) {
     });
 
     const mailData = {
-      from: res.email,
-      to: "pavel@dovhomilja.cz",
-      subject: `Message From ${res.firstName + " " + res.lastName}   - ${
-        res.phone
-      }`,
+      from: process.env.EMAIL_FROM,
+      to: process.env.EMAIL_TO,
+      subject: `New Demo request from www.spisum.cz ${
+        res.firstName + " " + res.lastName
+      }   - ${res.phone}`,
       text:
         "Jméno:" +
         res.firstName +
