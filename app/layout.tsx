@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <GoogleAnalytics GA_MEASUREMENT_ID="G-302727844" />
+      <GoogleAnalytics GA_MEASUREMENT_ID="G-LW4LQC1HLM" />
       <body className="flex flex-col w-full h-screen mx-auto overflow-hidden">
         <Header />
         <div className="overflow-hidden h-full ">{children}</div>
