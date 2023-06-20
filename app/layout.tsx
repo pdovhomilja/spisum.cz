@@ -6,7 +6,9 @@ import CookieBanner from "@/components/CookieBanner";
 
 export const metadata = {
   title: "Spisová služba SpisUm",
-  description: "Spisová služba SpisUm, je nová generace spisové služby",
+  description:
+    "Spisová služba SpisUm, je nová generace spisové služby. SpisUm bylo vytvořeno podle nové legislativy a je připravené na certifikaci",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({

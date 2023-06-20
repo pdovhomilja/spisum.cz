@@ -8,10 +8,12 @@ import {
 } from "@heroicons/react/24/solid";
 import { Button } from "@/components/ui/button";
 import Carousel from "@/components/Carousel";
+import { PageWrapper } from "@/lib/page-wrapper";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <main className="w-full mx-auto overflow-auto h-full">
+    <PageWrapper className="w-full mx-auto overflow-auto h-full">
       <div className="flex flex-col items-start justify-center md:flex-row p-5 md:p-20 lg:p-80">
         <div className=" w-full  md:w-1/2 space-y-5">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
@@ -38,8 +40,9 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex flex-col w-full md:flex-row bg-gray-200">
-        <div className="w-full md:w-1/2 space-y-5 p-5 md:p-20 text-sm">
+
+      <div className="flex flex-col w-full lg:flex-row bg-gray-200">
+        <div className="w-full lg:w-1/2 space-y-5 p-5 md:p-20 text-sm">
           <h2 className="text-orange-400 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
             1. Moderní řešení spisové služby
           </h2>
@@ -84,7 +87,7 @@ export default function Home() {
             nedílnou součástí je pracovat v systému spisové služby.
           </p>
         </div>
-        <div className="w-full md:w-1/2 flex items-center md:justify-end px-2 md:pr-20">
+        <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-end px-2 lg:pr-20">
           <Image
             src="/images/Spisum.gif"
             alt="Image"
@@ -96,46 +99,65 @@ export default function Home() {
       </div>
       <div className="flex flex-col w-full mx-auto items-center justify-center p-5 md:p-20">
         <h2 className="text-2xl py-5">Komplexní řešení spisové služby</h2>
-        <div className="flex flex-col md:flex-row px-5 space-x-5">
-          <div className="w-full md:w-1/2 ">
-            <ul>
-              <li className="flex items-center gap-2">
+        <div className="flex flex-col md:flex-row px-5 gap-5">
+          <div className="w-full md:w-1/2">
+            <div className="flex items-center justify-start  py-1 gap-2">
+              <div>
                 <CheckCircleIcon className="w-5 h-5 text-orange-400" />
+              </div>
+              <p>
                 Příjem dokumentu v elektronické podobě potvrzený informativní
                 zprávou v souladu s právními předpisy
-              </li>
-              <li className="flex items-center gap-2">
+              </p>
+            </div>
+            <div className="flex items-center justify-start  py-1 gap-2">
+              <div>
                 <CheckCircleIcon className="w-5 h-5 text-orange-400" />
-                Šifrovaná komunikace s využitím SSL certifikátu
-              </li>
-              <li className="flex items-center gap-2">
+              </div>
+              <p>Šifrovaná komunikace s využitím SSL certifikátu</p>
+            </div>
+            <div className="flex items-center justify-start  py-1 gap-2">
+              <div>
                 <CheckCircleIcon className="w-5 h-5 text-orange-400" />
+              </div>
+              <p>
                 Předávání dokumentů v datovém balíčku SIP do národního
                 digitálního archivu
-              </li>
-              <li className="flex items-center gap-2">
+              </p>
+            </div>
+            <div className="flex items-center justify-start py-1 gap-2">
+              <div>
                 <CheckCircleIcon className="w-5 h-5 text-orange-400" />
+              </div>
+
+              <p>
                 Možnost přidání nových funkcionalit aktualizace systému spisové
                 služby podle měnících se požadavků příslušných právních úprav
-              </li>
-            </ul>
+              </p>
+            </div>
           </div>
           <div className="w-full md:w-1/2">
-            <ul>
-              <li className="flex items-center gap-2">
+            <div className="flex items-center justify-start  py-1 gap-2">
+              <div>
                 <CheckCircleIcon className="w-5 h-5 text-orange-400" />
-                Možnost konverze včetně konverzních doložek
-              </li>
-              <li className="flex items-center gap-2">
+              </div>
+              <p>Možnost konverze včetně konverzních doložek</p>
+            </div>
+            <div className="flex items-center justify-start  py-1 gap-2">
+              <div>
                 <CheckCircleIcon className="w-5 h-5 text-orange-400" />
-                Integrace s ISDS
-              </li>
-              <li className="flex items-center gap-2">
+              </div>
+              <p>Integrace s ISDS</p>
+            </div>
+            <div className="flex items-center justify-start  py-1 gap-2">
+              <div>
                 <CheckCircleIcon className="w-5 h-5 text-orange-400" />
+              </div>
+              <p>
                 Transakční protokol včetně kompletní historie kdo a kdy s daným
                 dokumentem pracoval
-              </li>
-            </ul>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -182,6 +204,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

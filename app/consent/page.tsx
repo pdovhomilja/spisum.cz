@@ -136,43 +136,35 @@ const ConsentPage = () => {
           právo na to, abychom je bez zbytečného odkladu opravili, popřípadě
           doplnili.
         </p>
-        <p>
+        <ul>
           <strong>E.3. Právo na výmaz:</strong> V některých případech máte
           právo, abychom Vaše osobní údaje vymazali. Vaše osobní údaje bez
           zbytečného odkladu vymažeme, pokud je splněn některý z následujících
           důvodů:
-          <div className="mb-3 space-y-1">
-            <p>
-              1. Vaše osobní údaje již nepotřebujeme pro účely, pro které jsme
-              je zpracovávali,
-            </p>
-            <p>
-              2. využijete svého práva vznést námitku proti zpracování (viz níže
-              kapitola „Právo vznést námitku proti zpracování“) u osobních
-              údajů, které zpracováváme na základě našich oprávněných zájmů, a
-              my shledáme, že již žádné takové oprávněné zájmy, které by toto
-              zpracování opravňovaly, nemáme, nebo
-            </p>
-            <p>
-              3. ukáže se, že námi prováděné zpracování osobních údajů přestalo
-              být v souladu s obecně závaznými předpisy.
-            </p>
-          </div>
+          <p className="mb-3 space-y-1">
+            1. Vaše osobní údaje již nepotřebujeme pro účely, pro které jsme je
+            zpracovávali, 2. využijete svého práva vznést námitku proti
+            zpracování (viz níže kapitola „Právo vznést námitku proti
+            zpracování“) u osobních údajů, které zpracováváme na základě našich
+            oprávněných zájmů, a my shledáme, že již žádné takové oprávněné
+            zájmy, které by toto zpracování opravňovaly, nemáme, nebo 3. ukáže
+            se, že námi prováděné zpracování osobních údajů přestalo být v
+            souladu s obecně závaznými předpisy.
+          </p>
           Mějte prosím na paměti, že i když půjde o jeden z těchto důvodů,
           neznamená to, že ihned smažeme všechny Vaše osobní údaje. Toto právo
           se totiž neuplatní v případě, že zpracování Vašich osobních údajů je i
           nadále nezbytné pro:
-          <div className="mb-3 space-y-1">
-            <p>1. splnění naší právní povinnosti,</p>
-            <p>
-              2. účely archivace, vědeckého či historického výzkumu či pro
-              statistické účely, nebo
-            </p>
-            <p>3. určení, výkon nebo obhajobu našich právních nároků.</p>
-          </div>
+          <p className="mb-3 space-y-1">
+            1. splnění naší právní povinnosti, <br />
+            2. účely archivace, vědeckého či historického výzkumu či pro
+            statistické účely, nebo
+            <br />
+            3. určení, výkon nebo obhajobu našich právních nároků.
+          </p>
           <p>V takovém případě bude Vaše žádost zamítnuta.</p>
-        </p>
-        <p>
+        </ul>
+        <ul>
           <strong>E.4. Právo na omezení zpracování:</strong>
           <p>
             V některých případech můžete kromě práva na výmaz využít právo na
@@ -183,32 +175,27 @@ const ConsentPage = () => {
             práva na výmaz), ale po omezenou dobu. Zpracování osobních údajů
             musíme omezit když:
           </p>
-          <div className="mb-3 space-y-1">
-            <p>
-              1. popíráte přesnost osobních údajů, než se dohodneme, jaké údaje
-              jsou správné,
-            </p>
-            <p>
-              2. Vaše osobní údaje zpracováváme bez dostatečného právního
-              základu (např. nad rámec toho, co zpracovávat musíme), ale Vy
-              budete před výmazem takových údajů upřednostňovat pouze jejich
-              omezení (např. pokud očekáváte, že byste nám v budoucnu takové
-              údaje stejně poskytl),
-            </p>
-            <p>
-              3. Vaše osobní údaje již nepotřebujeme pro shora uvedené účely
-              zpracování, ale Vy je požadujete pro určení, výkon nebo obhajobu
-              svých právních nároků, nebo
-            </p>
-            <p>
-              4. vznesete námitku proti zpracování. Právo na námitku je
-              podrobněji popsáno níže v kapitole „Právo vznést námitku proti
-              zpracování“. Po dobu, po kterou šetříme, je-li Vaše námitka
-              oprávněná, jsme povinni zpracování Vašich osobních údajů omezit.
-            </p>
-          </div>
-        </p>
-        <p>
+          <p className="mb-3 space-y-1">
+            1. popíráte přesnost osobních údajů, než se dohodneme, jaké údaje
+            jsou správné,
+            <br />
+            2. Vaše osobní údaje zpracováváme bez dostatečného právního základu
+            (např. nad rámec toho, co zpracovávat musíme), ale Vy budete před
+            výmazem takových údajů upřednostňovat pouze jejich omezení (např.
+            pokud očekáváte, že byste nám v budoucnu takové údaje stejně
+            poskytl),
+            <br />
+            3. Vaše osobní údaje již nepotřebujeme pro shora uvedené účely
+            zpracování, ale Vy je požadujete pro určení, výkon nebo obhajobu
+            <br />
+            4. vznesete námitku proti zpracování. Právo na námitku je podrobněji
+            popsáno níže v kapitole „Právo vznést námitku proti zpracování“. Po
+            dobu, po kterou šetříme, je-li Vaše námitka oprávněná, jsme povinni
+            zpracování Vašich osobních údajů omezit.
+            <br />
+          </p>
+        </ul>
+        <ul>
           <strong>E.5. Právo na přenositelnost:</strong>
           <p>
             Máte právo získat od nás všechny Vaše osobní údaje, které jste nám
@@ -216,8 +203,8 @@ const ConsentPage = () => {
             osobní údaje vám poskytneme ve strukturovaném, běžně používaném a
             strojově čitelném formátu.
           </p>
-        </p>
-        <p>
+        </ul>
+        <ul>
           <strong>E.6. Právo vznést námitku proti zpracování:</strong>
           <p>
             Máte právo vznést námitku proti zpracování osobních údajů, k němuž
@@ -226,16 +213,16 @@ const ConsentPage = () => {
             zpracovávat, pokud nebudeme mít závažné oprávněné důvody pro to,
             abychom v takovém zpracování pokračovali.
           </p>
-        </p>
-        <p>
+        </ul>
+        <ul>
           <strong>E.7. Právo podat stížnost:</strong>
           <p>
             Uplatněním práv výše uvedeným způsobem není nijak dotčeno Vaše právo
             podat stížnost u Úřadu pro ochranu osobních údajů, a to způsobem
             uvedeným níže v kapitole „Jak lze uplatnit jednotlivá práva?“.
           </p>
-        </p>
-        <p>
+        </ul>
+        <ul>
           <strong>
             E.8. Právo podat stížnost u Úřadu pro ochranu osobních údajů:
           </strong>
@@ -244,7 +231,7 @@ const ConsentPage = () => {
             podat u Úřadu pro ochranu osobních údajů, který sídlí na adrese
             Pplk. Sochora 27, 170 00 Praha 7.
           </p>
-        </p>
+        </ul>
         <h2 className="text-orange-400 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors mt-5">
           F. Jak lze uplatnit jednotlivá práva?
         </h2>

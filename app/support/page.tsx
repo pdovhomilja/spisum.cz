@@ -1,3 +1,4 @@
+import { PageWrapper } from "@/lib/page-wrapper";
 import {
   AcademicCapIcon,
   LightBulbIcon,
@@ -9,7 +10,7 @@ type Props = {};
 
 const Support = (props: Props) => {
   return (
-    <div className="w-full h-full overflow-auto bg-indigo-700 text-white md:p-20 lg:p-40 xl:p-80">
+    <PageWrapper className="w-full h-full overflow-auto bg-indigo-700 text-white md:p-20 lg:p-40 xl:p-80">
       <div className="grid grid-cols-1 items-center justify-center h-full ">
         <div className="flex flex-col items-center justify-center w-full h-full">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl py-5">
@@ -47,7 +48,7 @@ const Support = (props: Props) => {
           </div>
         </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 };
 

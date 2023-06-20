@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import OrderButton from "@/components/OrderButton";
 import Carousel from "@/components/Carousel";
 import { ArrowRightCircleIcon } from "@heroicons/react/24/solid";
+import { PageWrapper } from "@/lib/page-wrapper";
 
 const Modules = () => {
   const slides = [
@@ -19,7 +20,7 @@ const Modules = () => {
     alert("Vývoj je v plném proudu");
   };
   return (
-    <div className="overflow-auto h-full">
+    <PageWrapper className="overflow-auto h-full">
       <section className="flex flex-col justify-center items-center w-full p-5 md:p-20 lg:px-40 2xl:px-80">
         <div className="flex flex-col items-center justify-center ">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl py-5 md:py-20">
@@ -372,7 +373,7 @@ const Modules = () => {
           </div>
         </div>
       </section>
-    </div>
+    </PageWrapper>
   );
 };
 
