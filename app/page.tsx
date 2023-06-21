@@ -7,38 +7,17 @@ import {
   CloudIcon,
 } from "@heroicons/react/24/solid";
 import { Button } from "@/components/ui/button";
-import Carousel from "@/components/Carousel";
-import { PageWrapper } from "@/lib/page-wrapper";
+import PageWrapper from "@/lib/page-wrapper";
 import Hero from "@/components/Hero";
+import HomeImage from "@/components/HomeImage";
+import HomeBanner from "@/components/HomeBanner";
 
 export default function Home() {
   return (
     <PageWrapper className="w-full mx-auto overflow-auto h-full">
-      <div className="flex flex-col items-start justify-center md:flex-row p-5 md:p-20 lg:p-80">
-        <div className=" w-full  md:w-1/2 space-y-5">
-          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-            Elektronická spisová služba SpisUm
-          </h1>
-          <p>
-            Komplexní vedení úředních dokumentů jednoduše, přehledně a
-            efektivně. Šetřete svůj čas, ale především čas referentů, kteří s
-            dokumenty pracují.
-          </p>
-          <Button asChild className="bg-[#FE9601] hover:bg-[#4154B3]">
-            <Link href="/modules" className="space-x-2 uppercase">
-              Zjistit více
-            </Link>
-          </Button>
-        </div>
-        <div className="flex items-center justify-center max-w-lg">
-          <Image
-            className="object-cover"
-            src="/images/img-web.png"
-            alt="Image"
-            width={400}
-            height={100}
-          />
-        </div>
+      <div className="flex flex-col items-start justify-center md:flex-row p-5 md:p-20 lg:p-40 xxl:p-80">
+        <HomeBanner />
+        <HomeImage />
       </div>
 
       <div className="flex flex-col w-full lg:flex-row bg-gray-200">

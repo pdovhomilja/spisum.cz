@@ -5,23 +5,29 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import OrderButton from "@/components/OrderButton";
 import Carousel from "@/components/Carousel";
 import { ArrowRightCircleIcon } from "@heroicons/react/24/solid";
-import { PageWrapper } from "@/lib/page-wrapper";
+import PageWrapper from "@/lib/page-wrapper";
 
 const Modules = () => {
   const slides = [
-    "/images/carusel/Screen-detail-historie.png",
-    "/images/carusel/Screen-podatelna.png",
-    "/images/carusel/Screen-podatelna-prijem-analog.png",
-    "/images/carusel/Screen-spisovy_rad.png",
-    "/images/carusel/Screen-vlozit-do-spisu.png",
+    {
+      src: "/images/carusel/Screen-detail-historie.png",
+      alt: "Historie dokumentu",
+    },
+    { src: "/images/carusel/Screen-podatelna.png", alt: "Podatelna" },
+    {
+      src: "/images/carusel/Screen-podatelna-prijem-analog.png",
+      alt: "Příjem analogového dokumentu",
+    },
+    { src: "/images/carusel/Screen-spisovy_rad.png", alt: "Spisový řád" },
+    {
+      src: "/images/carusel/Screen-vlozit-do-spisu.png",
+      alt: "Vložit do spisu",
+    },
   ];
 
-  const showAlert = () => {
-    alert("Vývoj je v plném proudu");
-  };
   return (
     <PageWrapper className="overflow-auto h-full">
-      <section className="flex flex-col justify-center items-center w-full p-5 md:p-20 lg:px-40 2xl:px-80">
+      <section className="flex flex-col justify-center items-center w-full p-5 md:px-20 lg:px-40 2xl:px-80">
         <div className="flex flex-col items-center justify-center ">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl py-5 md:py-20">
             Komplexní řešení spisové služby
@@ -83,14 +89,14 @@ const Modules = () => {
           </div>
         </div>
       </section>
-      <section className="flex flex-col justify-center items-center w-full p-5 md:p-20 lg:px-40 2xl:px-80">
+      <section className="flex flex-col justify-center items-center w-full p-5 md:px-20 lg:px-40 2xl:px-80">
         <Carousel autoSlide={false}>
           {slides.map((slide, index) => (
-            <img src={slide} key={index} alt={"demo"} onClick={showAlert} />
+            <img src={slide.src} key={index} alt={slide.alt} />
           ))}
         </Carousel>
       </section>
-      <section className="flex flex-col justify-center items-center w-full p-5 md:p-20 lg:px-40 2xl:px-80">
+      <section className="flex flex-col justify-center items-center w-full p-5 md:px-20 lg:px-40 2xl:px-80">
         <h2 className="text-orange-400 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
           Klíčové funkce
         </h2>

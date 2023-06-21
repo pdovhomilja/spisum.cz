@@ -39,8 +39,7 @@ const Hero = () => {
     <motion.section
       style={{ opacity }}
       ref={targetRef}
-      className="relative h-screen "
-      //className="relative mb-[8rem] h-screen py-16 before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--x,_100px)_var(--y,_100px),_var(--color-secondary)_0%,_transparent_100%)] before:opacity-40"
+      className="relative mb-[8rem] h-screen py-16 before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--x,_100px)_var(--y,_100px),_var(--color-secondary)_0%,_transparent_100%)] before:opacity-40"
     >
       <motion.div
         style={{ scale, position }}
