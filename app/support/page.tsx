@@ -8,6 +8,22 @@ import React from "react";
 
 type Props = {};
 
+const Box = ({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) => (
+  <div className="flex flex-col w-full h-full items-center justify-center bg-white p-10 text-[#FE9601] rounded-md ">
+    {icon}
+    <h3>{title}</h3>
+    <p className="text-gray-500">{description}</p>
+  </div>
+);
+
 const Support = (props: Props) => {
   return (
     <PageWrapper className="w-full h-full overflow-auto bg-indigo-700 text-white md:px-20">
@@ -22,30 +38,25 @@ const Support = (props: Props) => {
             obrátit. Poradíme Vám a individuálně proškolíme Vaše zaměstnance.
           </p>
         </div>
+
         <div className="flex flex-col lg:flex-row justify-center gap-5 w-full h-full pb-20 px-2">
-          <div className="flex flex-col w-full h-full items-center justify-center bg-white p-10 text-orange-600">
-            <UserGroupIcon className="h-8 w-8" aria-hidden="true" />
-            <h3>Helpdesk</h3>
-            <p className="text-gray-500">
-              Podpora v českém jazyce od vyškolených odporníků na spisovou
-              službu
-            </p>
-          </div>
-          <div className="flex flex-col w-full h-full items-center justify-center bg-white p-10 text-orange-600">
-            <AcademicCapIcon className="h-8 w-8" aria-hidden="true" />
-            <h3>Školení</h3>
-            <p className="text-gray-500">
-              Školení od zkušených metodiků na míru Vašim potřebám
-            </p>
-          </div>
-          <div className="flex flex-col  w-full h-full items-center justify-center bg-white p-10 text-orange-600">
-            <LightBulbIcon className="h-8 w-8" aria-hidden="true" />
-            <h3>Nadstavba</h3>
-            <p className="text-gray-500">
-              Vytvoříme pro Vás rozšíření, které bude přesně odpovídat Vašim
-              požadavkům
-            </p>
-          </div>
+          <Box
+            icon={<UserGroupIcon className="h-8 w-8" aria-hidden="true" />}
+            title="Helpdesk"
+            description=" Podpora v českém jazyce od vyškolených odporníků na spisovou
+            službu"
+          />
+          <Box
+            icon={<AcademicCapIcon className="h-8 w-8" aria-hidden="true" />}
+            title="Školení"
+            description="  Školení od zkušených metodiků na míru Vašim potřebám"
+          />
+          <Box
+            icon={<LightBulbIcon className="h-8 w-8" aria-hidden="true" />}
+            title="Nadstavba"
+            description="Vytvoříme pro Vás rozšíření, které bude přesně odpovídat Vašim
+            požadavkům"
+          />
         </div>
       </div>
     </PageWrapper>

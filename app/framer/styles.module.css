@@ -1,0 +1,15 @@
+.progressbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  border: 1px solid var(--red);
+  background: var(--red);
+  transform-origin: 0%;
+}
+
+.test {
+  font-size: large;
+  color: blueviolet;
+}

@@ -53,6 +53,15 @@ function Header({}: Props) {
       <div className="flex  gap-4 w-full p-5 justify-center">
         <OrderButton title="Vyzkoušet Demo" />
         <EnquiryButton />
+        {/*         <motion.a
+          whileHover={{ scale: 1.2 }}
+          onHoverStart={(e) => {}}
+          onHoverEnd={(e) => {}}
+          href="/"
+          className="flex rounded-md bg-red-500 items-center justify-center px-5 text-yellow-200"
+        >
+          Home
+        </motion.a> */}
       </div>
     </div>
   );

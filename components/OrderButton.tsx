@@ -9,17 +9,12 @@ import { useRouter } from "next/navigation";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import {
-  ComputerDesktopIcon,
-  PaperAirplaneIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/solid";
+import { ComputerDesktopIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 
 type Props = {
