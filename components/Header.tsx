@@ -37,15 +37,20 @@ function Header({}: Props) {
       <div className="flex w-full  justify-center items-center  mx-auto ">
         <div className="flex items-center justify-center gap-4">
           {links.map(({ href, label }, i) => (
-            <Link key={i} href={href} className="relative px-2 uppercase">
+            <Link
+              key={i}
+              href={href}
+              className={`relative px-2 uppercase ${
+                href === path ? "font-bold" : ""
+              }`}
+            >
               {href === path && (
                 <motion.span
                   layoutId="underline"
                   className="absolute left-0 top-full block h-[1px] w-full bg-black "
                 />
               )}
-
-              {label}
+              <motion.div whileHover={{ scale: 1.1 }}> {label}</motion.div>
             </Link>
           ))}
         </div>

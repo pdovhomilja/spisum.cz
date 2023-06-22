@@ -1,7 +1,7 @@
 "use client";
 
 import classNames from "classnames";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const PageWrapper = ({
   children,
@@ -11,18 +11,20 @@ const PageWrapper = ({
   className?: string;
 }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{
-        opacity: 1,
-        y: 0,
-      }}
-      exit={{ opacity: 0, y: 20 }}
-      transition={{ delay: 0.2 }}
-      className={classNames("min-h-screenHeightWithoutHeader", className)}
-    >
-      {children}
-    </motion.div>
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        exit={{ opacity: 0, y: 20 }}
+        transition={{ delay: 0.2 }}
+        className={classNames("min-h-screenHeightWithoutHeader", className)}
+      >
+        {children}
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
