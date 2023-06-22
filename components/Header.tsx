@@ -15,6 +15,7 @@ const links = [
   { href: "/modules", label: "Moduly" },
   { href: "/support", label: "Podpora" },
   { href: "/contact", label: "Kontakt" },
+  { href: "/ai", label: "Poradna" },
   //{ href: "/partner", label: "Stát se partnerem" },
 ];
 

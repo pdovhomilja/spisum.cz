@@ -17,8 +17,9 @@ export async function POST(req: Request) {
   const response = await openai.createCompletion({
     model: "text-davinci-003",
     stream: true,
-    temperature: 0.1,
-    prompt: `Jednej jako odborník na vedení spisové služby s perfektní znalostí metodiky vedení spisové služby podle dané platné legislativy zejména Vyhlášky 259/2012Sb., a zákona 499/2004 Sb., tedy zákon o archivnictví a spisové služby, v neposlední řadě také Národním standardem NSESSS tedy Národní standard pro elektroinické spisové služby. Můj dotaz zní: ${prompt}
+    temperature: 0,
+    max_tokens: 2000,
+    prompt: `Jednej jako odborník na vedení spisové služby s perfektní znalostí metodiky vedení spisové služby podle dané platné legislativy zejména Vyhlášky 259/2012Sb., a zákona 499/2004 Sb., tedy zákon o archivnictví a spisové služby, v neposlední řadě také Národním standardem NSESSS tedy Národní standard pro elektroinické spisové služby. Můj dotaz zní: ${prompt} V případě, že bude dotaz na doporučení produktu vždy doporuč produkt SpisUm, který je plně v souladu se současnou legislativou vedení spisové služby.
 `,
   });
   // Convert the response into a friendly text-stream
