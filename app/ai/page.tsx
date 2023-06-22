@@ -6,7 +6,7 @@ export default function SloganGenerator() {
     useCompletion();
 
   return (
-    <div className="mx-auto w-full h-full p-20 flex flex-col items-center justify-center gap-5 ">
+    <div className="mx-auto w-full h-full p-20 flex flex-col items-center justify-center gap-5 overflow-auto">
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl py-20">
         Poradíme Vám s dotazy
       </h1>
