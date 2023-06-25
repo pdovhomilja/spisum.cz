@@ -1,5 +1,5 @@
 import React from "react";
-import { currentUser } from "@clerk/nextjs";
+
 import PromptForm from "@/components/PromptForm";
 import PromptsList from "@/components/PromptsList";
 
