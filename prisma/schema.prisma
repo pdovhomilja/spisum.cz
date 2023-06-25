@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Prompts {
+  id           String       @id @default(auto()) @map("_id") @db.ObjectId
+  data_created DateTime     @default(now()) @map("data_created")
+  data_updated DateTime     @default(now()) @map("data_updated")
+  status       PromptStatus @default(INACTIVE)
+  prompt       String
+  author       String?
+  category     String?
+  likes        Int?
+  dislikes     Int?
+  comments     Comments[]
+}
+
+enum PromptStatus {
+  ACTIVE
+  INACTIVE
+}
+
+model Comments {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  data_created DateTime @default(now()) @map("data_created")
+  data_updated DateTime @default(now()) @map("data_updated")
+  comment      String
+  author       String
+  likes        Int
+  dislikes     Int
+  prompt       Prompts? @relation(fields: [promptId], references: [id])
+  promptId     String?  @map("promptId") @db.ObjectId
+}

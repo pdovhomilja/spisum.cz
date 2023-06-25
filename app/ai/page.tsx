@@ -1,9 +1,15 @@
 "use client";
+import { toast } from "react-hot-toast";
 
 import { useCompletion } from "ai/react";
-export default function SloganGenerator() {
+export default function AiHelpCenter() {
   const { completion, input, isLoading, handleInputChange, handleSubmit } =
-    useCompletion();
+    useCompletion({
+      onFinish: () => {
+        // do something with the completion result
+        toast.success("Successfully generated completion!");
+      },
+    });
 
   return (
     <div className="mx-auto w-full h-full p-20 flex flex-col items-center justify-center gap-5 overflow-auto">
@@ -15,10 +21,6 @@ export default function SloganGenerator() {
         499/2004 Sb., tedy zákon o archivnictví a spisové služby a v neposlední
         řadě i NSESSS.
       </p>
-      <div className=" h-full w-2/3 px-10 ">
-        <div className="my-6">{completion}</div>
-      </div>
-
       <div className="flex items-start w-2/3">
         <form onSubmit={handleSubmit} className="w-full px-10">
           <input
@@ -29,6 +31,9 @@ export default function SloganGenerator() {
           />
         </form>
       </div>
+      <div className=" h-full w-2/3 px-10 ">
+        <div className="my-6">{completion}</div>
+      </div>
     </div>
   );
 }
@@ -37,7 +42,7 @@ export default function SloganGenerator() {
 "use client";
 
 import { useCompletion } from "ai/react";
-import { toast } from "react-hot-toast";
+
 import { useDebouncedCallback } from "use-debounce";
 
 export default function Completion() {

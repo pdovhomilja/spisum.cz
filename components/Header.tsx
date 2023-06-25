@@ -8,6 +8,8 @@ import OrderButton from "./OrderButton";
 import EnquiryButton from "./EnquiryButton";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { SignOutButton } from "@clerk/nextjs";
+import { UserButton } from "@clerk/nextjs";
 
 type Props = {};
 
@@ -59,6 +61,7 @@ function Header({}: Props) {
       <div className="flex  gap-4 w-full p-5 justify-center">
         <OrderButton title="Vyzkoušet Demo" />
         <EnquiryButton />
+        <UserButton afterSignOutUrl="/" />
         {/*         <motion.a
           whileHover={{ scale: 1.2 }}
           onHoverStart={(e) => {}}

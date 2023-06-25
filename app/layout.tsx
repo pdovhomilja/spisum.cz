@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import CookieBanner from "@/components/CookieBanner";
+import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
   title: "Spisová služba SpisUm",
@@ -17,14 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <GoogleAnalytics GA_MEASUREMENT_ID="G-LW4LQC1HLM" />
-      <body className="flex flex-col w-full h-screen mx-auto overflow-hidden">
-        <Header />
-        <div className="overflow-hidden h-full ">{children}</div>
-        <Footer />
-        <CookieBanner />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-LW4LQC1HLM" />
+        <body className="flex flex-col w-full h-screen mx-auto overflow-hidden">
+          <Header />
+          <div className="overflow-hidden h-full ">{children}</div>
+          <Footer />
+          <CookieBanner />
+          <Toaster />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
