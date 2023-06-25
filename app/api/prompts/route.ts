@@ -15,3 +15,20 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Error" }, { status: 500 });
   }
 }
+
+export async function OPTIONS() {
+  const response = new NextResponse(null);
+
+  response.headers.set("Access-Control-Allow-Origin", "*");
+  response.headers.set(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, OPTIONS"
+  );
+  response.headers.set(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Authorization"
+  );
+  response.headers.set("Access-Control-Max-Age", "86400");
+
+  return response;
+}

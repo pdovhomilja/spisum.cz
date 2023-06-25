@@ -2,8 +2,8 @@
 import React from "react";
 import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
-import { Button } from "./ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import LoadingSpinner from "@/components/loadings/LoadingSpinner";
 import {
   Table,
   TableBody,
@@ -16,6 +16,8 @@ import {
 import { PlayCircleIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 type Props = {};
+
+export const dynamic = "force-dynamic";
 
 const PromptsList = (props: Props) => {
   const { data, error } = useSWR("/api/getprompts", fetcher, {
@@ -54,9 +56,9 @@ const PromptsList = (props: Props) => {
   if (error) return <div>failed to load</div>;
 
   return (
-    <div>
+    <div className="w-full h-full overflow-auto">
       {!data ? (
-        <div>loading...</div>
+        <LoadingSpinner message={"Načítám templates promptů ..."} />
       ) : (
         <div className="flex flex-col justify-start w-full gap-2 p-10">
           <Table>
