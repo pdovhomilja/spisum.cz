@@ -17,11 +17,8 @@ import { PlayCircleIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 type Props = {};
 
-export const dynamic = "auto";
-export const revalidate = 1000;
-
 const PromptsList = (props: Props) => {
-  const { data, error } = useSWR("/api/getprompts", fetcher, {
+  const { data, error, isLoading } = useSWR("/api/getprompts", fetcher, {
     refreshInterval: 1000,
     revalidateIfStale: true,
     revalidateOnFocus: true,
@@ -61,7 +58,7 @@ const PromptsList = (props: Props) => {
 
   return (
     <div className="w-full h-full overflow-auto">
-      {!data ? (
+      {isLoading ? (
         <LoadingSpinner message={"Načítám templates promptů ..."} />
       ) : (
         <div className="flex flex-col justify-start w-full gap-2 p-10">

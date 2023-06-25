@@ -3,7 +3,11 @@ import prisma from "@/lib/prismadb";
 
 export async function GET(req: Request) {
   try {
-    const prompts = await prisma.prompts.findMany();
+    const prompts = await prisma.prompts.findMany({
+      orderBy: {
+        date_created: "desc",
+      },
+    });
     return NextResponse.json({ prompts });
   } catch (e) {
     console.log(e);

@@ -12,8 +12,8 @@ datasource db {
 
 model Prompts {
   id           String       @id @default(auto()) @map("_id") @db.ObjectId
-  data_created DateTime     @default(now()) @map("data_created")
-  data_updated DateTime     @default(now()) @map("data_updated")
+  date_created DateTime     @default(now()) @map("data_created")
+  date_updated DateTime     @default(now()) @map("data_updated")
   status       PromptStatus @default(INACTIVE)
   prompt       String
   author       String?
