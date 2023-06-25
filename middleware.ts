@@ -5,7 +5,7 @@ export default authMiddleware({
   publicRoutes: ["/", "/modules", "/support", "/contact", "/ai", "/api/:path*"],
 });
 
-export function middleware(request) {
+export function middleware(request: any) {
   const origin = request.headers.get("origin");
   console.log(origin, "origin");
 
