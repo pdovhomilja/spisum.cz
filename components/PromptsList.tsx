@@ -17,11 +17,15 @@ import { PlayCircleIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 type Props = {};
 
-export const dynamic = "force-dynamic";
+export const dynamic = "auto";
+export const revalidate = 1000;
 
 const PromptsList = (props: Props) => {
   const { data, error } = useSWR("/api/getprompts", fetcher, {
     refreshInterval: 1000,
+    revalidateIfStale: true,
+    revalidateOnFocus: true,
+    revalidateOnReconnect: true,
   });
   const { toast } = useToast();
 

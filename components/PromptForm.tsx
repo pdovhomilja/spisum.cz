@@ -4,12 +4,15 @@ import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "./ui/button";
+import useSWR from "swr";
+import fetcher from "@/lib/fetcher";
 
 type Props = {};
 
 const PromptForm = (props: Props) => {
   const [prompt, setPrompt] = useState("");
   const { toast } = useToast();
+  const { mutate } = useSWR("/api/getprompts", fetcher);
 
   const handleSubmit = async () => {
     const response = await fetch("/api/prompts", {
@@ -19,6 +22,7 @@ const PromptForm = (props: Props) => {
       }),
     });
     const data = await response.json();
+    mutate();
   };
 
   return (
