@@ -5,7 +5,7 @@ export default authMiddleware({
   publicRoutes: ["/", "/modules", "/support", "/contact", "/ai", "/api/:path*"],
 });
 
-export function middleware(request: any) {
+/* export function middleware(request: any) {
   const origin = request.headers.get("origin");
   console.log(origin, "origin");
 
@@ -26,7 +26,7 @@ export function middleware(request: any) {
   console.log(request.url);
 
   return response;
-}
+} */
 
 export const config = {
   matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
