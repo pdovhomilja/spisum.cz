@@ -54,14 +54,16 @@ const PromptsList = ({ data }: any) => {
                 <TableCell>{prompt?.prompt}</TableCell>
                 <TableCell className="flex justify-end pr-5 text-right">
                   <PlayCircleIcon
-                    className="w-5 h-5 mr-2"
+                    title={"Activate prompt"}
+                    className="w-5 h-5 mr-2 cursor-pointer"
                     onClick={() => {
                       activatePrompt(prompt?.id);
                       router.refresh();
                     }}
                   />
                   <TrashIcon
-                    className="w-5 h-5"
+                    title={"Delete prompt"}
+                    className="w-5 h-5 cursor-pointer"
                     //onClick={() => handleDelete(prompt?.id)}
                     onClick={() => {
                       deletePrompt(prompt?.id);
