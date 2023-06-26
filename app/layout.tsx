@@ -5,6 +5,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import CookieBanner from "@/components/CookieBanner";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Spisová služba SpisUm",
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Footer />
           <CookieBanner />
           <Toaster />
+          <Analytics />
         </body>
       </html>
     </ClerkProvider>
