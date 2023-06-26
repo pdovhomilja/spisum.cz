@@ -4,26 +4,15 @@ import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "./ui/button";
-import useSWR from "swr";
-import fetcher from "@/lib/fetcher";
+import { addPrompt } from "@/lib/actions/addPrompt";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const PromptForm = (props: Props) => {
+  const router = useRouter();
   const [prompt, setPrompt] = useState("");
   const { toast } = useToast();
-  const { mutate } = useSWR("/api/getprompts", fetcher);
-
-  const handleSubmit = async () => {
-    const response = await fetch("/api/prompts", {
-      method: "POST",
-      body: JSON.stringify({
-        prompt: prompt,
-      }),
-    });
-    const data = await response.json();
-    mutate();
-  };
 
   return (
     <div className="grid w-full gap-2 p-10">
@@ -38,12 +27,13 @@ const PromptForm = (props: Props) => {
         <Button
           className="w-1/3"
           onClick={() => {
-            handleSubmit();
+            addPrompt(prompt);
             toast({
               title: "Added prompt",
               description: prompt,
             });
             setPrompt("");
+            router.refresh();
           }}
         >
           Add prompt

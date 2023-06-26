@@ -1,7 +1,8 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import prisma from "@/lib/prismadb";
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   const { id } = await req.json();
   console.log(id, "id");
   try {
@@ -30,7 +31,8 @@ export async function POST(req: Request) {
         status: "ACTIVE",
       },
     });
-
+    const path = req.nextUrl.searchParams.get("path") || "/";
+    revalidatePath(path);
     return NextResponse.json(setActive);
   } catch (e) {
     console.log(e);
