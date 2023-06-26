@@ -11,10 +11,10 @@ export async function POST(req: NextRequest) {
         prompt: prompt,
       },
     });
-
+    console.log(newprompt, "newprompt");
     const path = req.nextUrl.searchParams.get("path") || "/";
     revalidatePath(path);
-    return NextResponse.json(newprompt, { status: 201 });
+    return NextResponse.json(newprompt);
   } catch (e) {
     console.log(e);
     return NextResponse.json({ error: "Error" }, { status: 500 });
