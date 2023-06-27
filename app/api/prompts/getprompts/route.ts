@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
 import prisma from "@/lib/prismadb";
+import { revalidatePath } from "next/cache";
 
 export async function GET(req: NextRequest) {
   try {
@@ -9,9 +9,7 @@ export async function GET(req: NextRequest) {
         date_created: "desc",
       },
     });
-    const path = req.nextUrl.searchParams.get("path") || "/admin";
-    //const path = req.nextUrl || "/admin";
-    console.log(path, "path");
+    const path = "/admin";
     revalidatePath(path);
     return NextResponse.json({ prompts });
   } catch (e) {

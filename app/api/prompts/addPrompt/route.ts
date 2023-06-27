@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
       },
     });
     console.log(newprompt, "newprompt");
-    const path = req.nextUrl.searchParams.get("path") || "/";
+    const path = "/admin";
     revalidatePath(path);
     return NextResponse.json({ newprompt }, { status: 200 });
   } catch (e) {

@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
         status: "ACTIVE",
       },
     });
-    const path = req.nextUrl.searchParams.get("path") || "/";
+    const path = "/admin";
     revalidatePath(path);
     return NextResponse.json(setActive);
   } catch (e) {

@@ -74,6 +74,16 @@ export default function Home() {
             height={600}
             className="object-cover rounded-sm "
           />
+          {/*           <iframe
+            src="https://www.veed.io/embed/e5f32988-4fee-43d6-b77f-beb2921407ae"
+            width="744"
+            height="504"
+            frameborder="0"
+            title="Spisum"
+            webkitallowfullscreen
+            mozallowfullscreen
+            allowfullscreen
+          ></iframe> */}
         </div>
       </div>
       <div className="flex flex-col w-full mx-auto items-center justify-center p-5 md:p-20">
