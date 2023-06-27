@@ -9,7 +9,9 @@ export async function GET(req: NextRequest) {
         date_created: "desc",
       },
     });
-    const path = req.nextUrl.searchParams.get("path") || "/";
+    const path = req.nextUrl.searchParams.get("path") || "/admin";
+    //const path = req.nextUrl || "/admin";
+    console.log(path, "path");
     revalidatePath(path);
     return NextResponse.json({ prompts });
   } catch (e) {
