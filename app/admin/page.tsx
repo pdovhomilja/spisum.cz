@@ -1,17 +1,7 @@
 import React from "react";
 import PromptForm from "@/components/PromptForm";
 import PromptsList from "@/components/PromptsList";
-
-async function getPrompts() {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/prompts/getprompts`,
-    {
-      cache: "no-store",
-    }
-  );
-  const prompts = await response.json();
-  return prompts;
-}
+import { getPrompts } from "@/lib/actions/getPrompts";
 
 export const revalidate = 10;
 
