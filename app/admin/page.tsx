@@ -13,6 +13,8 @@ async function getPrompts() {
   return prompts;
 }
 
+export const revalidate = 10;
+
 const AdminPage = async () => {
   const data = await getPrompts();
 
