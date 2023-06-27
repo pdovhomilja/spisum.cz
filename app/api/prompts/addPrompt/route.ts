@@ -11,8 +11,8 @@ export async function POST(req: NextRequest) {
         prompt: prompt,
       },
     });
-    console.log(newprompt, "newprompt");
-    const path = "/admin";
+    //console.log(newprompt, "newprompt");
+    const path = req.nextUrl.searchParams.get("path") || "/admin";
     revalidatePath(path);
     return NextResponse.json({ newprompt }, { status: 200 });
   } catch (e) {
@@ -25,10 +25,7 @@ export async function OPTIONS() {
   const response = new NextResponse(null);
 
   response.headers.set("Access-Control-Allow-Origin", "*");
-  response.headers.set(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, OPTIONS"
-  );
+  response.headers.set("Access-Control-Allow-Methods", "POST,OPTIONS");
   response.headers.set(
     "Access-Control-Allow-Headers",
     "Content-Type, Authorization"

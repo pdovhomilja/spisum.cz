@@ -9,9 +9,10 @@ export async function GET(req: NextRequest) {
         date_created: "desc",
       },
     });
-    const path = "/admin";
+    const path = req.nextUrl.searchParams.get("path") || "/admin";
+    console.log(path, "path");
     revalidatePath(path);
-    return NextResponse.json({ prompts });
+    return NextResponse.json({ prompts }, { status: 200 });
   } catch (e) {
     console.log(e);
     return NextResponse.json({ error: "Error" }, { status: 500 });
