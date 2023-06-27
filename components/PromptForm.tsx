@@ -7,9 +7,7 @@ import { Button } from "./ui/button";
 import { addPrompt } from "@/lib/actions/addPrompt";
 import { useRouter } from "next/navigation";
 
-type Props = {};
-
-const PromptForm = (props: Props) => {
+const PromptForm = () => {
   const router = useRouter();
   const [prompt, setPrompt] = useState("");
   const { toast } = useToast();
@@ -26,10 +24,13 @@ const PromptForm = (props: Props) => {
       <div className="flex w-full justify-end pr-10">
         <Button
           className="w-1/3"
-          onClick={() => {
-            addPrompt(prompt);
+          onClick={async () => {
             toast({
-              title: "Added prompt",
+              title: "Adding prompt",
+            });
+            await addPrompt(prompt);
+            toast({
+              title: "Added new prompt",
               description: prompt,
             });
             setPrompt("");

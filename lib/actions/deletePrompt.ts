@@ -1,7 +1,7 @@
 "use server";
 
 export async function deletePrompt(id: any) {
-  await fetch(`${process.env.NEXT_PUBLIC_API_URL}/deleteprompt`, {
+  await fetch(`${process.env.NEXT_PUBLIC_API_URL}/prompts/deleteprompt`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

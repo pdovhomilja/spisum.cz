@@ -13,12 +13,25 @@ import { PlayCircleIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { deletePrompt } from "@/lib/actions/deletePrompt";
 import { activatePrompt } from "@/lib/actions/activatePrompt";
 import { useRouter } from "next/navigation";
+import { useToast } from "./ui/use-toast";
 
-type Props = {};
+type Props = {
+  data: any;
+};
 
-const PromptsList = ({ data }: any) => {
+const PromptsList = ({ data }: Props) => {
   const router = useRouter();
   const prompts = data?.prompts;
+  const { toast } = useToast();
+
+  if (!prompts)
+    return (
+      <div className="w-full h-full overflow-auto">
+        <div className="flex flex-col justify-start w-full gap-2 p-10">
+          There is no prompts yet.
+        </div>
+      </div>
+    );
 
   return (
     <div className="w-full h-full overflow-auto">
@@ -50,23 +63,33 @@ const PromptsList = ({ data }: any) => {
                 >
                   {prompt?.status}
                 </TableCell>
-
                 <TableCell>{prompt?.prompt}</TableCell>
                 <TableCell className="flex justify-end pr-5 text-right">
                   <PlayCircleIcon
                     title={"Activate prompt"}
                     className="w-5 h-5 mr-2 cursor-pointer"
-                    onClick={() => {
-                      activatePrompt(prompt?.id);
+                    onClick={async () => {
+                      toast({
+                        title: "Activating prompt",
+                      });
+                      await activatePrompt(prompt?.id);
+                      toast({
+                        title: "Prompt activated",
+                      });
                       router.refresh();
                     }}
                   />
                   <TrashIcon
                     title={"Delete prompt"}
                     className="w-5 h-5 cursor-pointer"
-                    //onClick={() => handleDelete(prompt?.id)}
-                    onClick={() => {
-                      deletePrompt(prompt?.id);
+                    onClick={async () => {
+                      toast({
+                        title: "Deleting prompt",
+                      });
+                      await deletePrompt(prompt?.id);
+                      toast({
+                        title: "Prompt deleted",
+                      });
                       router.refresh();
                     }}
                   />

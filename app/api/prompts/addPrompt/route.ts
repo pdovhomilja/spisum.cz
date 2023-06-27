@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     console.log(newprompt, "newprompt");
     const path = req.nextUrl.searchParams.get("path") || "/";
     revalidatePath(path);
-    return NextResponse.json(newprompt);
+    return NextResponse.json({ newprompt }, { status: 200 });
   } catch (e) {
     console.log(e);
     return NextResponse.json({ error: "Error" }, { status: 500 });
