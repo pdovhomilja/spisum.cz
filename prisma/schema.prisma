@@ -15,6 +15,7 @@ model Prompts {
   date_created DateTime     @default(now()) @map("data_created")
   date_updated DateTime     @default(now()) @map("data_updated")
   status       PromptStatus @default(INACTIVE)
+  use_count    Int          @default(0)
   prompt       String
   author       String?
   category     String?
@@ -22,6 +23,19 @@ model Prompts {
   dislikes     Int?
   comments     Comments[]
 }
+
+model PromptsHistory {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  date_created DateTime @default(now()) @map("data_created")
+  prompt       String
+  author       String?
+  category     String?
+  user_ip     String?
+  user_browser String?
+  likes        Int?
+  dislikes     Int?
+  comments     Comments[]
+  }
 
 enum PromptStatus {
   ACTIVE
@@ -37,5 +51,6 @@ model Comments {
   likes        Int
   dislikes     Int
   prompt       Prompts? @relation(fields: [promptId], references: [id])
+  prompthistory PromptsHistory? @relation(fields: [promptId], references: [id])
   promptId     String?  @map("promptId") @db.ObjectId
 }

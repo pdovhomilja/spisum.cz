@@ -1,36 +1,31 @@
-import React from "react";
-import PromptForm from "@/components/PromptForm";
-import PromptsList from "@/components/PromptsList";
-import { getPrompts } from "@/lib/actions/getPrompts";
-import Link from "next/link";
+import PromptsHistoryList from "@/components/PromptsHistoryList";
 import { buttonVariants } from "@/components/ui/button";
+import { getPromptsHistory } from "@/lib/actions/getPromptsHistory";
+import Link from "next/link";
+import React from "react";
 
 export const revalidate = 10;
 
-const AdminPage = async () => {
-  const data = await getPrompts();
-
+const HistoryPage = async () => {
+  const data = await getPromptsHistory();
   return (
     <div className="flex flex-col items-center justify-center w-full h-full overflow-hidden">
       <h1 className="text-xl">Admin Page</h1>
       <div>
         <Link
-          href={"/admin/history"}
+          href={"/admin"}
           className={
             buttonVariants({ variant: "outline" }) + " bg-slate-900 text-white"
           }
         >
-          Prompt history
+          Admin home
         </Link>
       </div>
       <div className="w-full px-10 h-full overflow-auto">
-        <PromptsList data={data} />
-      </div>
-      <div className="w-full ">
-        <PromptForm />
+        <PromptsHistoryList data={data} />
       </div>
     </div>
   );
 };
 
-export default AdminPage;
+export default HistoryPage;

@@ -19,7 +19,7 @@ type Props = {
   data: any;
 };
 
-const PromptsList = ({ data }: Props) => {
+const PromptsHistoryList = ({ data }: Props) => {
   const router = useRouter();
   const prompts = data?.prompts;
   const { toast } = useToast();
@@ -37,19 +37,21 @@ const PromptsList = ({ data }: Props) => {
     <div className="w-full h-full overflow-auto">
       <div className="flex flex-col justify-start w-full gap-2 p-10">
         <Table>
-          <TableCaption>A list of your promps</TableCaption>
+          <TableCaption>
+            A list of user`s promps search on our web spisum.cz
+          </TableCaption>
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">ID</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Prompt</TableHead>
-              <TableHead>Counter</TableHead>
-              <TableHead className="text-right">Actions</TableHead>
+              <TableHead>User IP</TableHead>
+              <TableHead>User agent</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {prompts.map((prompt: any, i: any) => (
-              <TableRow key={i} className="">
+              <TableRow key={i}>
                 <TableCell className="font-medium">
                   {prompt?.id.substring(0, 4) +
                     "..." +
@@ -65,43 +67,8 @@ const PromptsList = ({ data }: Props) => {
                   {prompt?.status}
                 </TableCell>
                 <TableCell>{prompt?.prompt}</TableCell>
-                <TableCell>
-                  <div className="flex justify-center items-center">
-                    {prompt?.use_count}
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <div className="flex justify-center items-center">
-                    <PlayCircleIcon
-                      title={"Activate prompt"}
-                      className="w-5 h-5 mr-2 cursor-pointer"
-                      onClick={async () => {
-                        toast({
-                          title: "Activating prompt",
-                        });
-                        await activatePrompt(prompt?.id);
-                        toast({
-                          title: "Prompt activated",
-                        });
-                        router.refresh();
-                      }}
-                    />
-                    <TrashIcon
-                      title={"Delete prompt"}
-                      className="w-5 h-5 cursor-pointer"
-                      onClick={async () => {
-                        toast({
-                          title: "Deleting prompt",
-                        });
-                        await deletePrompt(prompt?.id);
-                        toast({
-                          title: "Prompt deleted",
-                        });
-                        router.refresh();
-                      }}
-                    />
-                  </div>
-                </TableCell>
+                <TableCell>{prompt?.user_ip}</TableCell>
+                <TableCell>{prompt?.user_browser}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -111,4 +78,4 @@ const PromptsList = ({ data }: Props) => {
   );
 };
 
-export default PromptsList;
+export default PromptsHistoryList;
