@@ -32,6 +32,7 @@ model PromptsHistory {
   category     String?
   user_ip     String?
   user_browser String?
+  response   String?
   likes        Int?
   dislikes     Int?
   comments     Comments[]

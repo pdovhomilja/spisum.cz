@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Table,
   TableBody,
@@ -9,17 +9,23 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { PlayCircleIcon, TrashIcon } from "@heroicons/react/24/outline";
+import {
+  EyeIcon,
+  PlayCircleIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline";
 import { deletePrompt } from "@/lib/actions/deletePrompt";
 import { activatePrompt } from "@/lib/actions/activatePrompt";
 import { useRouter } from "next/navigation";
 import { useToast } from "./ui/use-toast";
+import Dialog from "./Dialog";
 
 type Props = {
   data: any;
 };
 
 const PromptsHistoryList = ({ data }: Props) => {
+  const [open, setOpen] = useState(false);
   const router = useRouter();
   const prompts = data?.prompts;
   const { toast } = useToast();
@@ -47,6 +53,7 @@ const PromptsHistoryList = ({ data }: Props) => {
               <TableHead>Prompt</TableHead>
               <TableHead>User IP</TableHead>
               <TableHead>User agent</TableHead>
+              <TableHead>Response</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -69,6 +76,9 @@ const PromptsHistoryList = ({ data }: Props) => {
                 <TableCell>{prompt?.prompt}</TableCell>
                 <TableCell>{prompt?.user_ip}</TableCell>
                 <TableCell>{prompt?.user_browser}</TableCell>
+                <TableCell className="flex justify-center items-center">
+                  <Dialog data={prompt?.response} />
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>

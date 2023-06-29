@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
     headers[key] = value;
   });
 
-  await prisma.promptsHistory.create({
+  const newPromptHistoryItem = await prisma.promptsHistory.create({
     data: {
       prompt: prompt,
       user_ip: headers["x-forwarded-for"],
@@ -66,7 +66,20 @@ export async function POST(req: NextRequest) {
     prompt: template[0].prompt + prompt,
   });
   // Convert the response into a friendly text-stream
-  const stream = OpenAIStream(response);
+  const stream = OpenAIStream(response, {
+    onCompletion: async (completion: string) => {
+      // This callback is called when the stream completes
+      // You can use this to save the final completion to your database
+      await prisma.promptsHistory.update({
+        where: {
+          id: newPromptHistoryItem.id,
+        },
+        data: {
+          response: completion,
+        },
+      });
+    },
+  });
   // Respond with the stream
   return new StreamingTextResponse(stream);
 }
