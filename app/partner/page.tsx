@@ -14,8 +14,7 @@ const Partner = (props: Props) => {
             Věříme, že spolupráce je základem úspěchu.
           </h1>
           <p className="w-2/3 mx-auto py-10">
-            Věříme, že spolupráce je základem úspěchu. Protože se chceme
-            soustředit na vývoj a podporu našich produktů,
+            Protože se chceme soustředit na vývoj a podporu našich produktů,
             <span className="text-semibold underline">hledáme partnery</span>,
             kteří budou našim zákazníkům poskytovat konzultace, implementace a
             další služby.
