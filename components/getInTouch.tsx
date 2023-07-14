@@ -67,6 +67,7 @@ export default function GetInTouch() {
     },
     [router]
   );
+
   return (
     <div className="relative isolate bg-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
