@@ -15,6 +15,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: "https://www.spisum.cz/partner",
+      lastModified: new Date(),
+    },
+    {
+      url: "https://www.spisum.cz/consent",
+      lastModified: new Date(),
+    },
+    {
       url: "https://www.spisum.cz/contact",
       lastModified: new Date(),
     },
