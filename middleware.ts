@@ -7,6 +7,7 @@ export default authMiddleware({
     "/modules",
     "/support",
     "/contact",
+    "/partner",
     "/ai",
     "/consent",
     "/api/:path*",
