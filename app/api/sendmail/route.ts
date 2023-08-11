@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
     });
 
     //Create a new record in CRM api endpoint
-    const endpoint = `${process.env.NEXTCRM_ENDPOINT}/api/crm/leads/createLeadFromWeb`;
+    const endpoint = `${process.env.NEXTCRM_ENDPOINT}/api/crm/leads/create-lead-from-web`;
     const token = process.env.NEXTCRM_TOKEN;
 
     const headers = {
@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
         body: JSON.stringify(responseData),
       });
 
-      console.log(newLead, "newLead");
+      //console.log(newLead, "newLead");
       return NextResponse.json(
         { success: true, newLead: newLead },
         { status: 200 }
