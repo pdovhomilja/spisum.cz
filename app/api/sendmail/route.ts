@@ -1,3 +1,4 @@
+import axios from "axios";
 import { NextResponse } from "next/server";
 import { type NextRequest } from "next/server";
 
@@ -102,15 +103,13 @@ export async function POST(request: NextRequest) {
     console.log(token, "token"); */
 
     try {
-      const newLead = await fetch(endpoint, {
-        method: "POST",
+      const newLead = await axios.post(endpoint, responseData, {
         headers: headers,
-        body: JSON.stringify(responseData),
       });
 
-      //console.log(newLead, "newLead");
+      console.log(newLead.status, "newLead");
       return NextResponse.json(
-        { success: true, newLead: newLead },
+        { success: true, newLead: newLead.status },
         { status: 200 }
       );
     } catch (error: any) {
