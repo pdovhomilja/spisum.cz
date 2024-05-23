@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/admin/',
     },
-    sitemap: 'https://www.spisum.cz/sitemap.xml',
+    sitemap: 'https://spisum.cz/sitemap.xml',
   }
 }
