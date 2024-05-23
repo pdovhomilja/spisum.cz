@@ -1,13 +1,12 @@
 import { Configuration, OpenAIApi } from "openai-edge";
-import { OpenAIStream, StreamingTextResponse } from "ai";
+import {
+  OpenAIStream,
+  StreamingTextResponse,
+  experimental_streamText,
+} from "ai";
+import { openai } from "@ai-sdk/openai";
 import { NextRequest } from "next/server";
 import prisma from "@/lib/prismadb";
-
-// Create an OpenAI API client (that's edge friendly!)
-const config = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(config);
 
 // Set the runtime to edge for best performance
 //export const runtime = "edge";
@@ -58,28 +57,18 @@ export async function POST(req: NextRequest) {
   });
 
   // Ask OpenAI for a streaming completion given the prompt
-  const response = await openai.createCompletion({
-    model: "text-davinci-003",
+  /*   const response = await openai.createCompletion({
+    model: "gpt-4o",
     stream: true,
     temperature: 0,
     max_tokens: 2000,
     prompt: template[0].prompt + prompt,
+  }); */
+
+  const response = await experimental_streamText({
+    model: openai("gpt-4o"),
+    prompt: template[0].prompt + prompt,
   });
-  // Convert the response into a friendly text-stream
-  const stream = OpenAIStream(response, {
-    onCompletion: async (completion: string) => {
-      // This callback is called when the stream completes
-      // You can use this to save the final completion to your database
-      await prisma.promptsHistory.update({
-        where: {
-          id: newPromptHistoryItem.id,
-        },
-        data: {
-          response: completion,
-        },
-      });
-    },
-  });
-  // Respond with the stream
-  return new StreamingTextResponse(stream);
+
+  return new StreamingTextResponse(response.toAIStream());
 }
