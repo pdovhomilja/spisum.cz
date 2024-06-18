@@ -1,9 +1,4 @@
-import { Configuration, OpenAIApi } from "openai-edge";
-import {
-  OpenAIStream,
-  StreamingTextResponse,
-  experimental_streamText,
-} from "ai";
+import { streamText, StreamingTextResponse } from "ai";
 import { openai } from "@ai-sdk/openai";
 import { NextRequest } from "next/server";
 import prisma from "@/lib/prismadb";
@@ -33,8 +28,6 @@ export async function POST(req: NextRequest) {
     },
   });
 
-  //console.log(headers, "headers");
-
   const template = await prisma.prompts.findMany({
     where: {
       status: "ACTIVE",
@@ -56,19 +49,21 @@ export async function POST(req: NextRequest) {
     },
   });
 
-  // Ask OpenAI for a streaming completion given the prompt
-  /*   const response = await openai.createCompletion({
-    model: "gpt-4o",
-    stream: true,
-    temperature: 0,
-    max_tokens: 2000,
-    prompt: template[0].prompt + prompt,
-  }); */
-
-  const response = await experimental_streamText({
+  const result = await streamText({
     model: openai("gpt-4o"),
     prompt: template[0].prompt + prompt,
+    onFinish: async ({ text }) => {
+      //Upate prisma history
+      await prisma.promptsHistory.update({
+        where: {
+          id: newPromptHistoryItem.id,
+        },
+        data: {
+          response: text,
+        },
+      });
+    },
   });
 
-  return new StreamingTextResponse(response.toAIStream());
+  return new StreamingTextResponse(result.toAIStream());
 }

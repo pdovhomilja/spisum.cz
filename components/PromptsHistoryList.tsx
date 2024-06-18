@@ -19,6 +19,7 @@ import { activatePrompt } from "@/lib/actions/activatePrompt";
 import { useRouter } from "next/navigation";
 import { useToast } from "./ui/use-toast";
 import Dialog from "./Dialog";
+import { formatDistance, subDays } from "date-fns";
 
 type Props = {
   data: any;
@@ -39,6 +40,7 @@ const PromptsHistoryList = ({ data }: Props) => {
       </div>
     );
 
+  console.log(prompts[0]);
   return (
     <div className="w-full h-full overflow-auto">
       <div className="flex flex-col justify-start w-full gap-2 p-10">
@@ -49,6 +51,7 @@ const PromptsHistoryList = ({ data }: Props) => {
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">ID</TableHead>
+              <TableHead className="w-[180px]">Date</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Prompt</TableHead>
               <TableHead>User IP</TableHead>
@@ -63,6 +66,13 @@ const PromptsHistoryList = ({ data }: Props) => {
                   {prompt?.id.substring(0, 4) +
                     "..." +
                     prompt?.id.substring(prompt.id.length - 4)}
+                </TableCell>
+                <TableCell>
+                  {formatDistance(
+                    subDays(prompt?.date_created, 0),
+                    new Date(),
+                    { addSuffix: true }
+                  )}
                 </TableCell>
                 <TableCell
                   className={`${
