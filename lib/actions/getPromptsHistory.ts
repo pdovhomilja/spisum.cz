@@ -1,12 +1,13 @@
 "use server";
 
+import prisma from "@/lib/prismadb";
+
 export async function getPromptsHistory() {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/prompts/getpromptshistory`,
-    {
-      cache: "no-store",
-    }
-  );
-  const prompts = await response.json();
-  return prompts;
+  const response = await prisma.promptsHistory.findMany({
+    orderBy: {
+      date_created: "desc",
+    },
+  });
+
+  return response;
 }

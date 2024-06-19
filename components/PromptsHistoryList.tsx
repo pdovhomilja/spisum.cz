@@ -9,27 +9,17 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  EyeIcon,
-  PlayCircleIcon,
-  TrashIcon,
-} from "@heroicons/react/24/outline";
-import { deletePrompt } from "@/lib/actions/deletePrompt";
-import { activatePrompt } from "@/lib/actions/activatePrompt";
-import { useRouter } from "next/navigation";
-import { useToast } from "./ui/use-toast";
+
 import Dialog from "./Dialog";
 import { formatDistance, subDays } from "date-fns";
+import { PromptsHistory } from "@prisma/client";
 
 type Props = {
-  data: any;
+  data: PromptsHistory[] | undefined;
 };
 
 const PromptsHistoryList = ({ data }: Props) => {
-  const [open, setOpen] = useState(false);
-  const router = useRouter();
-  const prompts = data?.prompts;
-  const { toast } = useToast();
+  const prompts = data;
 
   if (!prompts)
     return (
@@ -40,7 +30,7 @@ const PromptsHistoryList = ({ data }: Props) => {
       </div>
     );
 
-  console.log(prompts[0]);
+  //console.log(prompts[0]);
   return (
     <div className="w-full h-full overflow-auto">
       <div className="flex flex-col justify-start w-full gap-2 p-10">

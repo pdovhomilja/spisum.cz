@@ -4,10 +4,11 @@ import { getPromptsHistory } from "@/lib/actions/getPromptsHistory";
 import Link from "next/link";
 import React from "react";
 
-export const revalidate = 10;
-
 const HistoryPage = async () => {
   const data = await getPromptsHistory();
+
+  console.log(data);
+
   return (
     <div className="flex flex-col items-center justify-center w-full h-full overflow-hidden">
       <h1 className="text-xl">Admin Page</h1>
