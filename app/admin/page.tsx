@@ -1,13 +1,18 @@
 import React from "react";
+import Link from "next/link";
+import { unstable_noStore } from "next/cache";
+
 import PromptForm from "@/components/PromptForm";
 import PromptsList from "@/components/PromptsList";
-import { getPrompts } from "@/lib/actions/getPrompts";
-import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 
-export const revalidate = 10;
+import { getPrompts } from "@/lib/actions/getPrompts";
 
 const AdminPage = async () => {
+  //Always fetch fresh data on the server
+  unstable_noStore();
+
+  // Fetch the data
   const data = await getPrompts();
 
   return (
