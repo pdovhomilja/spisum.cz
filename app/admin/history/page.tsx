@@ -7,7 +7,7 @@ import React from "react";
 const HistoryPage = async () => {
   const data = await getPromptsHistory();
 
-  console.log(data);
+  //console.log(data);
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full overflow-hidden">

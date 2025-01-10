@@ -109,9 +109,9 @@ export default function GetInTouch() {
               Pokud Vás naše řešení zaujalo, neváhejte nás kontaktovat, Váš
               kontakt předáme jednomu z našich implementačních partnerů <br />{" "}
               <br />
-              <span className="font-bold"> ISFG Technology a.s.</span>
+              <span className="font-bold"> SPISUM digital a.s.</span>
               <br />
-              IČ: 10975047
+              IČ: 223 69 953
             </p>
             <dl className="mt-10 space-y-4 text-base leading-7 text-gray-600">
               <div className="flex gap-x-4">
@@ -154,8 +154,11 @@ export default function GetInTouch() {
                   />
                 </dt>
                 <dd>
-                  <a className="hover:text-gray-900" href="mailto:info@isfg.cz">
-                    info@isfg.cz
+                  <a
+                    className="hover:text-gray-900"
+                    href="mailto:info@spisum.cz"
+                  >
+                    info@spisum.cz
                   </a>
                 </dd>
               </div>

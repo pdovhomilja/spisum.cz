@@ -11,10 +11,10 @@ const ConsentPage = () => {
       </h2>
       <p className="py-5">
         Správcem osobních údajů je{" "}
-        <span className="font-bold">ISFG technology a.s., IČO: 10975047</span>,
+        <span className="font-bold">SPISUM digital a.s., IČO: 223 69 953</span>,
         se sídlem Švábova 772/18, Hlubočepy, 152 00 Praha 5, zapsaný ve
-        obchodním rejstříku vedeném Městským soudem v Praze pod sp. zn. B 26456
-        (dále jen „ISFG“ nebo „my“).
+        obchodním rejstříku vedeném Městským soudem v Praze pod sp. zn. B 29364
+        (dále jen „SPISUM“ nebo „my“).
       </p>
       <h2 className="text-orange-400 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
         B. Účely a právní základy pro zpracování
@@ -43,7 +43,7 @@ const ConsentPage = () => {
         <p>
           4. zasílání obchodních sdělení nabídkou našich produktů a služeb, a to
           na základě našeho oprávněného zájmu spočívajícího v propagaci činnosti
-          ISFG;
+          SPISUM;
         </p>
         <p>
           5. plnění zákonných povinností, zejména z oblasti účetní a daňové.
@@ -242,7 +242,7 @@ const ConsentPage = () => {
           prostředků:
         </p>
         <div className="mb-3 space-y-1">
-          <p>1. Emailem na: info@isfg.cz</p>
+          <p>1. Emailem na: info@SPISUM.cz</p>
           <p>2. Písemně na adrese: Švábova 772/18, Hlubočepy, 152 00 Praha 5</p>
         </div>
         <p className="py-5">

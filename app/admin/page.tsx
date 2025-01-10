@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useActionState } from "react";
 import Link from "next/link";
 import { unstable_noStore } from "next/cache";
 
@@ -14,6 +14,9 @@ const AdminPage = async () => {
 
   // Fetch the data
   const data = await getPrompts();
+
+  //Console log the data
+  //console.log(data);
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full overflow-hidden">

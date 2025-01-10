@@ -18,12 +18,7 @@ function Footer({}: Props) {
             <Link href="https://www.vercel.com">Vercel</Link>
           </span>
         </div>
-        <div className="gap-2 ">
-          Supported by:
-          <Link className="pl-1 font-bold" href="https://www.isfg.cz">
-            ISFG Technology a.s.
-          </Link>
-        </div>
+        <div className="gap-2 "></div>
       </div>
     </div>
   );
