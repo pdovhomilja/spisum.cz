@@ -2,24 +2,25 @@
 
 import { toast } from "react-hot-toast";
 
-import { useChat } from "@ai-sdk/react";
+import { useCompletion } from "ai/react";
 import { Button } from "@/components/ui/button";
 import { Loader } from "lucide-react";
 
 export default function AiHelpCenter() {
-  /*   const { completion, input, isLoading, handleInputChange, handleSubmit } =
-    useCompletion({
-      api: "/api/completion",
-      onFinish: () => {
-        // do something with the completion result
-        toast.success("Successfully generated completion!");
-      },
-    }); */
-
-  const { messages, input, handleInputChange, handleSubmit, isLoading } =
-    useChat({
-      api: "api/completion",
-    });
+  const {
+    completion,
+    input,
+    handleInputChange,
+    handleSubmit,
+    isLoading,
+    setInput,
+  } = useCompletion({
+    api: "/api/completion",
+    onFinish: () => {
+      toast.success("Successfully generated completion!");
+      setInput("");
+    },
+  });
 
   return (
     <div className="mx-auto w-full h-full p-20 flex flex-col items-center justify-center gap-5 overflow-auto">
@@ -34,17 +35,8 @@ export default function AiHelpCenter() {
       <div className="flex flex-col space-y-4 w-full ">
         <div className=" border rounded-md p-4 text-sm text-muted-foreground">
           <div>Spisum AI: Jak Vám můžu pomoci ?</div>
-          {messages.map((message) => (
-            <div
-              key={message.id}
-              className={`w-full ${
-                message.role === "user" ? "text-blue-500" : ""
-              }`}
-            >
-              {message.role === "user" ? "Vy: " : "Spisum AI: "}
-              {message.content}
-            </div>
-          ))}
+
+          <div>{completion}</div>
         </div>
         <div className="w-full ">
           <form onSubmit={handleSubmit} className="flex gap-2 w-full">

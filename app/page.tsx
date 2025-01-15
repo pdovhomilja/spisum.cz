@@ -73,6 +73,7 @@ export default function Home() {
             width={800}
             height={600}
             className="object-cover rounded-sm "
+            unoptimized
           />
           {/*           <iframe
             src="https://www.veed.io/embed/e5f32988-4fee-43d6-b77f-beb2921407ae"

@@ -12,7 +12,7 @@ function Footer({}: Props) {
       <div className="flex flex-col md:flex-row justify-end gap-2">
         <div className="gap-2">
           powered by Next.js{" "}
-          <span className="bg-black rounded-md text-white px-1">14</span> hosted
+          <span className="bg-black rounded-md text-white px-1">15</span> hosted
           by:
           <span className="text-bold underline">
             <Link href="https://www.vercel.com">Vercel</Link>
