@@ -43,7 +43,7 @@ export async function POST(req: Request) {
   });
 
   const result = await streamText({
-    model: openai("gpt-4o"),
+    model: openai(process.env.OPENAI_MODEL!),
     system: template[0].prompt,
     prompt: prompt,
     onFinish: async ({ text }) => {

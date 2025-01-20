@@ -1,3 +1,4 @@
+import ContactForm from "@/components/forms/contact-form";
 import GetInTouch from "@/components/getInTouch";
 import PageWrapper from "@/lib/page-wrapper";
 import React from "react";
