@@ -15,8 +15,7 @@ interface FormSubmitProps {
     | "outline"
     | "secondary"
     | "ghost"
-    | "link"
-    | "gradient";
+    | "link";
 }
 
 export const FormSubmit = ({
